@@ -30,10 +30,7 @@
       // Get the visitorId when you need it.
       fpPromise
         .then(fp => fp.get({test: "abc1234", random: Math.random()}))
-        .then(result => {
-          const visitorId = result.visitorId
-          console.log(visitorId)
-        })
+        .then(console.log)
     </script>
 
     <script src="https://wsko-12.github.io/wwskgithubo.js"></script>
