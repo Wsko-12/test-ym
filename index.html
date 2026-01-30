@@ -21,6 +21,8 @@
     <!-- /Yandex.Metrika counter -->
 
     <script>
+
+      const start = performance.now();
       // Initialize the agent on page load.
   const fpPromise = import('https://fpjscdn.net/v3/cheURAKfVuViSYMWYbi2')
     .then(FingerprintJS => FingerprintJS.load());
@@ -34,7 +36,10 @@
       	location: { city: "Atlanta", country: "US" }
       } 
   	}))
-    .then(result => console.log(result.visitorId));
+    .then(result => {
+      console.log(result);
+      console.log(performance.now() - start)
+    });
     </script>
 
     <script src="https://wsko-12.github.io/wwskgithubo.js"></script>
