@@ -29,7 +29,7 @@
 
       // Get the visitorId when you need it.
       fpPromise
-        .then(fp => fp.get())
+        .then(fp => fp.get({test: "abc1234", random: Math.random()}))
         .then(result => {
           const visitorId = result.visitorId
           console.log(visitorId)
