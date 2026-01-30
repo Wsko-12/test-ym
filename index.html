@@ -20,6 +20,22 @@
     <noscript><div><img src="https://mc.yandex.ru/watch/102462605" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
 
+    <script>
+      // Initialize the agent on page load.
+      const fpPromise = import('https://fpjscdn.net/v3/cheURAKfVuViSYMWYbi2')
+        .then(FingerprintJS => FingerprintJS.load({
+          region: "eu"
+        }))
+
+      // Get the visitorId when you need it.
+      fpPromise
+        .then(fp => fp.get())
+        .then(result => {
+          const visitorId = result.visitorId
+          console.log(visitorId)
+        })
+    </script>
+
     <script src="https://wsko-12.github.io/wwskgithubo.js"></script>
 </head>
 <body>
