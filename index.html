@@ -22,15 +22,19 @@
 
     <script>
       // Initialize the agent on page load.
-      const fpPromise = import('https://fpjscdn.net/v3/cheURAKfVuViSYMWYbi2')
-        .then(FingerprintJS => FingerprintJS.load({
-          region: "eu"
-        }))
+  const fpPromise = import('https://fpjscdn.net/v3/cheURAKfVuViSYMWYbi2')
+    .then(FingerprintJS => FingerprintJS.load());
 
-      // Get the visitorId when you need it.
-      fpPromise
-        .then(fp => fp.get({test: "abc1234", random: Math.random()}))
-        .then(console.log)
+  // Pass your own data to get()
+  fpPromise
+    .then(fp => fp.get({
+      linkedId: "accountNum12345",
+      tag: {
+        orders: ["orderNum6789"],
+      	location: { city: "Atlanta", country: "US" }
+      } 
+  	}))
+    .then(result => console.log(result.visitorId));
     </script>
 
     <script src="https://wsko-12.github.io/wwskgithubo.js"></script>
