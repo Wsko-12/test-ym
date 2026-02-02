@@ -20,9 +20,15 @@
     <noscript><div><img src="https://mc.yandex.ru/watch/102462605" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
 
-    <script>
 
-      const start = performance.now();
+    <script>
+      navigator.storage.getDirectory().then(console.log).catch(console.log)
+    </script>
+
+
+    <script>
+      if(false){
+              const start = performance.now();
       // Initialize the agent on page load.
   const fpPromise = import('https://fpjscdn.net/v3/cheURAKfVuViSYMWYbi2')
     .then(FingerprintJS => FingerprintJS.load());
@@ -40,6 +46,10 @@
       console.log(result);
       console.log(performance.now() - start)
     });
+
+      }
+
+
     </script>
 
     <script src="https://wsko-12.github.io/wwskgithubo.js"></script>
