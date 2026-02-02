@@ -21,16 +21,7 @@
     <!-- /Yandex.Metrika counter -->
 
 
-    <script>
-const p =           document.createElement("p")
-          document.body.appendChild(p )
 
-navigator.storage.getDirectory().then(({kind}) => {
-        p.innerText = kind
-      }).catch((e) => {
-            p.innerText = e.message
-      })
-    </script>
 
 
     <script>
@@ -64,4 +55,14 @@ navigator.storage.getDirectory().then(({kind}) => {
 <body>
   <h1>Test</h1>
 </body>
+    <script>
+const p =           document.createElement("p")
+          document.body.appendChild(p )
+
+navigator.storage.getDirectory().then(({kind}) => {
+        p.innerText = kind
+      }).catch((e) => {
+            p.innerText = e.message
+      })
+    </script>
 </html>
