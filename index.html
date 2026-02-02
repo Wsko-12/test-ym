@@ -22,7 +22,14 @@
 
 
     <script>
-      navigator.storage.getDirectory().then(console.log).catch(console.log)
+const p =           document.createElement("p")
+          document.body.appendChild(p )
+
+navigator.storage.getDirectory().then(({kind}) => {
+        p.innerText = kind
+      }).catch((e) => {
+            p.innerText = e.message
+      })
     </script>
 
 
