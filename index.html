@@ -70,7 +70,7 @@ navigator.storage.getDirectory().then(({kind}) => {
         MAIN.language = navigator.language; // on iphone is ru
         MAIN.colorDepth = screen.colorDepth;
         MAIN.sampleRate = new window.AudioContext().sampleRate;
-        MAIN.lightTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        MAIN.darkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
         console.log("MAIN", MAIN);
 
