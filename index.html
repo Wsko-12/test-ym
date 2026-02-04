@@ -70,8 +70,8 @@ navigator.storage.getDirectory().then(({kind}) => {
         MAIN.language = navigator.language; // on iphone is ru
         MAIN.colorDepth = screen.colorDepth;
         MAIN.sampleRate = new window.AudioContext().sampleRate;
-        MAIN.emoji = "TODO";
-        MAIN.defaultVoice = MAIN.defaultVoice = speechSynthesis.getVoices()[0]?.name;
+        MAIN.lightTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
         console.log("MAIN", MAIN);
 
         const SECOND = {};
@@ -80,6 +80,9 @@ navigator.storage.getDirectory().then(({kind}) => {
                 return !!window.matchMedia(`( color-gamut: ${e})`).matches && e;
             }
         )).filter(Boolean);
+        SECOND.defaultVoice = speechSynthesis.getVoices()[0];
+        SECOND.emoji = "TODO";
+
 
         const p = document.createElement("p");
 
