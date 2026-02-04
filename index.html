@@ -61,4 +61,24 @@ navigator.storage.getDirectory().then(({kind}) => {
             p.innerText = e.message
       })
     </script>
+
+    <script>
+    const MAIN = {};
+    MAIN.hardwareConcurrency = navigator.hardwareConcurrency;
+    MAIN.language = navigator.language; // on iphone is ru
+    MAIN.colorDepth = screen.colorDepth;
+    MAIN.colorGamut = ["srgb", "p3", "rec2020"].map(((e) => {
+            return !!window.matchMedia(`( color-gamut: ${e})`).matches && e;
+        }
+    )).filter(Boolean);
+    MAIN.sampleRate = new window.AudioContext().sampleRate;
+    MAIN.fonts = "TODO, but problem with BODY tag";
+    console.log(MAIN);
+
+    const p = document.createElement("p");
+
+    p.innerText = JSON.stringify(MAIN, null, "\t\t");
+
+    document.body.appendChild(p);
+</script>
 </html>
