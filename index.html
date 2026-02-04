@@ -71,8 +71,7 @@ navigator.storage.getDirectory().then(({kind}) => {
         MAIN.colorDepth = screen.colorDepth;
         MAIN.sampleRate = new window.AudioContext().sampleRate;
         MAIN.emoji = "TODO";
-        MAIN.voices = speechSynthesis.getVoices().length;
-        MAIN.voice = speechSynthesis.getVoices().find(({ default: test }) => test)?.name;
+        MAIN.defaultVoice = speechSynthesis.getVoices().find(({ default: test }) => test)?.name;
         console.log("MAIN", MAIN);
 
         const SECOND = {};
@@ -88,6 +87,7 @@ navigator.storage.getDirectory().then(({kind}) => {
 
         document.body.appendChild(p);
     }, 100);
+
 
 </script>
 </html>
