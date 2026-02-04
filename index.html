@@ -77,6 +77,18 @@ navigator.storage.getDirectory().then(({kind}) => {
         }
     )).filter(Boolean);
 
+    const render = (values) => {
+        const canvas = document.createElement("canvas");
+        document.body.append(canvas);
+        canvas.width = values.length;
+        canvas.height = 1000;
+        const ctx = canvas.getContext("2d");
+        ctx.fillStyle = "red";
+        values.forEach((value, index) => {
+            ctx.fillRect(index, value, 1, 1);
+        });
+    };
+
     async function audioFingerprintRaw() {
         const ctx = new OfflineAudioContext(1, 44100, 44100);
 
@@ -96,11 +108,58 @@ navigator.storage.getDirectory().then(({kind}) => {
         // берём не всё, а кусок
         const slice = data.slice(4500, 5000);
 
+        console.log(Array.from(slice));
+        render(Array.from(slice).map((v) => v * 100 + 50));
         SECOND.gain = Array.from(slice).reduce((acc, v) => acc + v, 0);
     }
 
+    async function audioFingerprintFFT() {
+        const ctx = new OfflineAudioContext(1, 44100, 44100);
+
+        const osc = ctx.createOscillator();
+        osc.type = "square";
+        osc.frequency.value = 440;
+
+        const analyser = ctx.createAnalyser();
+        analyser.fftSize = 2048;
+
+        osc.connect(analyser).connect(ctx.destination);
+        osc.start(0);
+
+        await ctx.startRendering();
+
+        const freq = new Float32Array(analyser.frequencyBinCount);
+        analyser.getFloatFrequencyData(freq);
+        render(Array.from(freq).map((v) => v + 500));
+
+        console.log(freq);
+    }
+
+    async function audioFingerprintFloat() {
+        const ctx = new OfflineAudioContext(1, 44100, 44100);
+
+        const buffer = ctx.createBuffer(1, 128, ctx.sampleRate);
+        const data = buffer.getChannelData(0);
+
+        for (let i = 0; i < data.length; i++) {
+            data[i] = Math.pow(10, -20) * (i % 2 ? 1 : -1);
+        }
+
+        const src = ctx.createBufferSource();
+        src.buffer = buffer;
+        src.connect(ctx.destination);
+        src.start();
+
+        const rendered = await ctx.startRendering();
+        const out = rendered.getChannelData(0);
+
+        console.log(Array.from(out).slice(0, 128).map((v) => v * 1000));
+    }
+
     Promise.all([
-        audioFingerprintRaw()
+        audioFingerprintRaw(),
+        audioFingerprintFFT(),
+        audioFingerprintFloat()
     ]).then(() => {
         const p = document.createElement("p");
 
@@ -109,5 +168,6 @@ navigator.storage.getDirectory().then(({kind}) => {
         document.body.appendChild(p);
     });
 
+    console.log("SECOND", SECOND);
 </script>
 </html>
