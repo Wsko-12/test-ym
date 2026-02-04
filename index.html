@@ -71,7 +71,7 @@ navigator.storage.getDirectory().then(({kind}) => {
         MAIN.colorDepth = screen.colorDepth;
         MAIN.sampleRate = new window.AudioContext().sampleRate;
         MAIN.emoji = "TODO";
-        MAIN.defaultVoice = speechSynthesis.getVoices().find(({ default: test }) => test)?.name;
+        MAIN.defaultVoice = MAIN.defaultVoice = speechSynthesis.getVoices()[0]?.name;
         console.log("MAIN", MAIN);
 
         const SECOND = {};
