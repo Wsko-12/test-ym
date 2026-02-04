@@ -62,14 +62,14 @@ navigator.storage.getDirectory().then(({kind}) => {
       })
     </script>
 
-    <script type="module">
-    window.setTimeout(() => {
-        const MAIN = {};
+    <script type="module">       
+     const MAIN = {};
         MAIN.hardwareConcurrency = navigator.hardwareConcurrency;
         MAIN.language = navigator.language; // on iphone is ru
         MAIN.colorDepth = screen.colorDepth;
         MAIN.sampleRate = new window.AudioContext().sampleRate;
         MAIN.emoji = "TODO";
+        MAIN.voices = speechSynthesis.getVoices().length;
         MAIN.voice = speechSynthesis.getVoices().find(({ default: test }) => test)?.name;
         console.log("MAIN", MAIN);
 
@@ -85,8 +85,6 @@ navigator.storage.getDirectory().then(({kind}) => {
         p.innerText = JSON.stringify(MAIN, null, "\t\t") + "\n\n\n" + JSON.stringify(SECOND, null, "\t\t");
 
         document.body.appendChild(p);
-        /* PROBLEM WITH VOICE*/
-    }, 1000);
 
 </script>
 </html>
