@@ -63,7 +63,9 @@ navigator.storage.getDirectory().then(({kind}) => {
     </script>
 
     <script type="module">       
-     const MAIN = {};
+    console.log(speechSynthesis.getVoices().length);
+    window.setTimeout(() => {
+        const MAIN = {};
         MAIN.hardwareConcurrency = navigator.hardwareConcurrency;
         MAIN.language = navigator.language; // on iphone is ru
         MAIN.colorDepth = screen.colorDepth;
@@ -85,6 +87,7 @@ navigator.storage.getDirectory().then(({kind}) => {
         p.innerText = JSON.stringify(MAIN, null, "\t\t") + "\n\n\n" + JSON.stringify(SECOND, null, "\t\t");
 
         document.body.appendChild(p);
+    }, 100);
 
 </script>
 </html>
