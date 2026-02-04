@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
+      if(false){
        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
        m[i].l=1*new Date();
        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
@@ -16,6 +17,7 @@
             accurateTrackBounce:true,
             webvisor:true
        });
+      }
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/102462605" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
@@ -33,13 +35,7 @@
 
   // Pass your own data to get()
   fpPromise
-    .then(fp => fp.get({
-      linkedId: "accountNum12345",
-      tag: {
-        orders: ["orderNum6789"],
-      	location: { city: "Atlanta", country: "US" }
-      } 
-  	}))
+    .then(fp => fp.get())
     .then(result => {
       console.log(result);
       console.log(performance.now() - start)
