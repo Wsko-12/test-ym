@@ -63,7 +63,7 @@ navigator.storage.getDirectory().then(({kind}) => {
     </script>
 
     <script type="module">
-    const MAIN = {};
+ const MAIN = {};
     MAIN.hardwareConcurrency = navigator.hardwareConcurrency;
     MAIN.language = navigator.language; // on iphone is ru
     MAIN.colorDepth = screen.colorDepth;
@@ -78,10 +78,12 @@ navigator.storage.getDirectory().then(({kind}) => {
     )).filter(Boolean);
 
     const render = (values) => {
+        return;
         const canvas = document.createElement("canvas");
         document.body.append(canvas);
         canvas.width = values.length;
         canvas.height = 1000;
+        canvas.style.border = "1px solid red";
         const ctx = canvas.getContext("2d");
         ctx.fillStyle = "red";
         values.forEach((value, index) => {
@@ -94,7 +96,7 @@ navigator.storage.getDirectory().then(({kind}) => {
 
         const osc = ctx.createOscillator();
         osc.type = "triangle";
-        osc.frequency.value = 1000;
+        osc.frequency.value = 5000;
 
         const gain = ctx.createGain();
         gain.gain.value = 0.1;
@@ -109,7 +111,7 @@ navigator.storage.getDirectory().then(({kind}) => {
         const slice = data.slice(4500, 5000);
 
         console.log(Array.from(slice));
-        render(Array.from(slice).map((v) => v * 100 + 50));
+        render(Array.from(slice).map((v) => v * 2000 + 500));
         SECOND.gain = Array.from(slice).reduce((acc, v) => acc + v, 0);
     }
 
@@ -156,10 +158,22 @@ navigator.storage.getDirectory().then(({kind}) => {
         console.log(Array.from(out).slice(0, 128).map((v) => v * 1000));
     }
 
+    function cpuSignature() {
+        const res = [];
+        let x = 1e-300;
+        for (let i = 0; i < 1000; i++) {
+            x *= 1.0000000000000002;
+            res.push(x);
+        }
+        return res.slice(-10);
+    }
+
+    SECOND.cpuSignature = cpuSignature();
+
     Promise.all([
         audioFingerprintRaw(),
         audioFingerprintFFT(),
-        audioFingerprintFloat()
+        audioFingerprintFloat(),
     ]).then(() => {
         const p = document.createElement("p");
 
