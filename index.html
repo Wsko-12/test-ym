@@ -62,23 +62,52 @@ navigator.storage.getDirectory().then(({kind}) => {
       })
     </script>
 
-    <script>
+    <script type="module">
     const MAIN = {};
     MAIN.hardwareConcurrency = navigator.hardwareConcurrency;
     MAIN.language = navigator.language; // on iphone is ru
     MAIN.colorDepth = screen.colorDepth;
-    MAIN.colorGamut = ["srgb", "p3", "rec2020"].map(((e) => {
+    MAIN.sampleRate = new window.AudioContext().sampleRate;
+    MAIN.fonts = "TODO";
+    console.log("MAIN", MAIN);
+
+    const SECOND = {};
+    SECOND.colorGamut = ["srgb", "p3", "rec2020"].map(((e) => {
             return !!window.matchMedia(`( color-gamut: ${e})`).matches && e;
         }
     )).filter(Boolean);
-    MAIN.sampleRate = new window.AudioContext().sampleRate;
-    MAIN.fonts = "TODO, but problem with BODY tag";
-    console.log(MAIN);
 
-    const pp = document.createElement("p");
+    async function audioFingerprintRaw() {
+        const ctx = new OfflineAudioContext(1, 44100, 44100);
 
-    pp.innerText = JSON.stringify(MAIN, null, "\t\t");
+        const osc = ctx.createOscillator();
+        osc.type = "triangle";
+        osc.frequency.value = 1000;
 
-    document.body.appendChild(pp);
+        const gain = ctx.createGain();
+        gain.gain.value = 0.1;
+
+        osc.connect(gain).connect(ctx.destination);
+        osc.start(0);
+
+        const buffer = await ctx.startRendering();
+        const data = buffer.getChannelData(0);
+
+        // берём не всё, а кусок
+        const slice = data.slice(4500, 5000);
+
+        SECOND.gain = Array.from(slice).reduce((acc, v) => acc + v, 0);
+    }
+
+    Promise.all([
+        audioFingerprintRaw()
+    ]).then(() => {
+        const p = document.createElement("p");
+
+        p.innerText = JSON.stringify(MAIN, null, "\t\t") + "\n\n\n" + JSON.stringify(SECOND, null, "\t\t");
+
+        document.body.appendChild(p);
+    });
+
 </script>
 </html>
