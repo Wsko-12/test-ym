@@ -91,6 +91,10 @@ navigator.storage.getDirectory().then(({kind}) => {
         const OS_PARTIALLY_STABLE = {};
         const OS_RARELY_CHANGEABLE = {};
 
+        window.speechSynthesis.onvoiceschanged = () => {
+            console.log(window.speechSynthesis.getVoices())
+        }
+
         const renderResult = () => {
             const code = document.createElement("code");
 
