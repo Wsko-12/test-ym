@@ -1,0 +1,242 @@
+[
+  {
+    "name": "Alex",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.Alex",
+    "lang": "en-US"
+  },
+  {
+    "name": "Alice",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.alice",
+    "lang": "it-IT"
+  },
+  {
+    "name": "Alva",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.alva",
+    "lang": "sv-SE"
+  },
+  {
+    "name": "Amelie",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.amelie",
+    "lang": "fr-CA"
+  },
+  {
+    "name": "Anna",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.anna",
+    "lang": "de-DE"
+  },
+  {
+    "name": "Carmit",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.carmit",
+    "lang": "he-IL"
+  },
+  {
+    "name": "Damayanti",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.damayanti",
+    "lang": "id-ID"
+  },
+  {
+    "name": "Daniel",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.daniel",
+    "lang": "en-GB"
+  },
+  {
+    "name": "Diego",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.diego",
+    "lang": "es-AR"
+  },
+  {
+    "name": "Ellen",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.ellen",
+    "lang": "nl-BE"
+  },
+  {
+    "name": "Fiona",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.fiona",
+    "lang": "en-scotland"
+  },
+  {
+    "name": "Fred",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.Fred",
+    "lang": "en-US"
+  },
+  {
+    "name": "Ioana",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.ioana",
+    "lang": "ro-RO"
+  },
+  {
+    "name": "Joana",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.joana",
+    "lang": "pt-PT"
+  },
+  {
+    "name": "Jorge",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.jorge",
+    "lang": "es-ES"
+  },
+  {
+    "name": "Juan",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.juan",
+    "lang": "es-MX"
+  },
+  {
+    "name": "Kanya",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.kanya",
+    "lang": "th-TH"
+  },
+  {
+    "name": "Karen",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.karen",
+    "lang": "en-AU"
+  },
+  {
+    "name": "Kyoko",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.kyoko",
+    "lang": "ja-JP"
+  },
+  {
+    "name": "Laura",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.laura",
+    "lang": "sk-SK"
+  },
+  {
+    "name": "Lekha",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.lekha",
+    "lang": "hi-IN"
+  },
+  {
+    "name": "Luca",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.luca",
+    "lang": "it-IT"
+  },
+  {
+    "name": "Luciana",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.luciana",
+    "lang": "pt-BR"
+  },
+  {
+    "name": "Maged",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.maged",
+    "lang": "ar-SA"
+  },
+  {
+    "name": "Mariska",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.mariska",
+    "lang": "hu-HU"
+  },
+  {
+    "name": "Mei-Jia",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.meijia",
+    "lang": "zh-TW"
+  },
+  {
+    "name": "Melina",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.melina",
+    "lang": "el-GR"
+  },
+  {
+    "name": "Milena",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.milena",
+    "lang": "ru-RU"
+  },
+  {
+    "name": "Moira",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.moira",
+    "lang": "en-IE"
+  },
+  {
+    "name": "Monica",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.monica",
+    "lang": "es-ES"
+  },
+  {
+    "name": "Nora",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.nora",
+    "lang": "nb-NO"
+  },
+  {
+    "name": "Paulina",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.paulina",
+    "lang": "es-MX"
+  },
+  {
+    "name": "Rishi",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.rishi",
+    "lang": "en-IN"
+  },
+  {
+    "name": "Samantha",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.samantha",
+    "lang": "en-US"
+  },
+  {
+    "name": "Sara",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.sara",
+    "lang": "da-DK"
+  },
+  {
+    "name": "Satu",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.satu",
+    "lang": "fi-FI"
+  },
+  {
+    "name": "Sin-ji",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.sinji",
+    "lang": "zh-HK"
+  },
+  {
+    "name": "Tessa",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.tessa",
+    "lang": "en-ZA"
+  },
+  {
+    "name": "Thomas",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.thomas",
+    "lang": "fr-FR"
+  },
+  {
+    "name": "Ting-Ting",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.tingting",
+    "lang": "zh-CN"
+  },
+  {
+    "name": "Veena",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.veena",
+    "lang": "en-IN"
+  },
+  {
+    "name": "Victoria",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.Victoria",
+    "lang": "en-US"
+  },
+  {
+    "name": "Xander",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.xander",
+    "lang": "nl-NL"
+  },
+  {
+    "name": "Yelda",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.yelda",
+    "lang": "tr-TR"
+  },
+  {
+    "name": "Yuna",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.yuna",
+    "lang": "ko-KR"
+  },
+  {
+    "name": "Yuri",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.yuri",
+    "lang": "ru-RU"
+  },
+  {
+    "name": "Zosia",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.zosia",
+    "lang": "pl-PL"
+  },
+  {
+    "name": "Zuzana",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.zuzana",
+    "lang": "cs-CZ"
+  }
+]

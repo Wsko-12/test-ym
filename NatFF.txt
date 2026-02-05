@@ -1,0 +1,922 @@
+[
+  {
+    "name": "Альберт",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.Albert",
+    "lang": "en-US"
+  },
+  {
+    "name": "Элис",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.it-IT.Alice",
+    "lang": "it-IT"
+  },
+  {
+    "name": "Соумья",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.kn-IN.Alpana",
+    "lang": "kn-IN"
+  },
+  {
+    "name": "Алва",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.sv-SE.Alva",
+    "lang": "sv-SE"
+  },
+  {
+    "name": "Aman",
+    "url": "urn:moz-tts:osx:com.apple.voice.Aman",
+    "lang": "en-IN"
+  },
+  {
+    "name": "Амели",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.fr-CA.Amelie",
+    "lang": "fr-CA"
+  },
+  {
+    "name": "Амира",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.ms-MY.Amira",
+    "lang": "ms-MY"
+  },
+  {
+    "name": "Анна",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.de-DE.Anna",
+    "lang": "de-DE"
+  },
+  {
+    "name": "Aru",
+    "url": "urn:moz-tts:osx:com.apple.voice.Aru",
+    "lang": "kk-KZ"
+  },
+  {
+    "name": "Плохие новости",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.BadNews",
+    "lang": "en-US"
+  },
+  {
+    "name": "Бах",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.Bahh",
+    "lang": "en-US"
+  },
+  {
+    "name": "Колокольчик",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.Bells",
+    "lang": "en-US"
+  },
+  {
+    "name": "Прыг-скок",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.Boing",
+    "lang": "en-US"
+  },
+  {
+    "name": "Пузырьки",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.Bubbles",
+    "lang": "en-US"
+  },
+  {
+    "name": "Кармит",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.he-IL.Carmit",
+    "lang": "he-IL"
+  },
+  {
+    "name": "Виолончель",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.Cellos",
+    "lang": "en-US"
+  },
+  {
+    "name": "Дамаянти",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.id-ID.Damayanti",
+    "lang": "id-ID"
+  },
+  {
+    "name": "Дэниэл",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.en-GB.Daniel",
+    "lang": "en-GB"
+  },
+  {
+    "name": "Daria",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.bg-BG.Daria",
+    "lang": "bg-BG"
+  },
+  {
+    "name": "Воббл",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.Deranged",
+    "lang": "en-US"
+  },
+  {
+    "name": "Eddy (Немецкий (Германия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.de-DE.Eddy",
+    "lang": "de-DE"
+  },
+  {
+    "name": "Eddy (Английский (Британия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.en-GB.Eddy",
+    "lang": "en-GB"
+  },
+  {
+    "name": "Eddy (Английский (США))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.en-US.Eddy",
+    "lang": "en-US"
+  },
+  {
+    "name": "Eddy (Испанский (Испания))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.es-ES.Eddy",
+    "lang": "es-ES"
+  },
+  {
+    "name": "Eddy (Испанский (Мексика))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.es-MX.Eddy",
+    "lang": "es-MX"
+  },
+  {
+    "name": "Eddy (Финский (Финляндия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.fi-FI.Eddy",
+    "lang": "fi-FI"
+  },
+  {
+    "name": "Eddy (Французский (Канада))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.fr-CA.Eddy",
+    "lang": "fr-CA"
+  },
+  {
+    "name": "Eddy (Французский (Франция))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.fr-FR.Eddy",
+    "lang": "fr-FR"
+  },
+  {
+    "name": "Eddy (Итальянский (Италия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.it-IT.Eddy",
+    "lang": "it-IT"
+  },
+  {
+    "name": "Eddy (Японский (Япония))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.ja-JP.Eddy",
+    "lang": "ja-JP"
+  },
+  {
+    "name": "Eddy (Корейский (Республика Корея))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.ko-KR.Eddy",
+    "lang": "ko-KR"
+  },
+  {
+    "name": "Eddy (Португальский (Бразилия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.pt-BR.Eddy",
+    "lang": "pt-BR"
+  },
+  {
+    "name": "Eddy (Китайский (Китай континентальный))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.zh-CN.Eddy",
+    "lang": "zh-CN"
+},
+  {
+    "name": "Eddy (Китайский (Тайвань))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.zh-TW.Eddy",
+    "lang": "zh-TW"
+  },
+  {
+    "name": "Эллен",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.nl-BE.Ellen",
+    "lang": "nl-BE"
+  },
+  {
+    "name": "Flo (Немецкий (Германия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.de-DE.Flo",
+    "lang": "de-DE"
+  },
+  {
+    "name": "Flo (Английский (Британия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.en-GB.Flo",
+    "lang": "en-GB"
+  },
+  {
+    "name": "Flo (Английский (США))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.en-US.Flo",
+    "lang": "en-US"
+  },
+  {
+    "name": "Flo (Испанский (Испания))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.es-ES.Flo",
+    "lang": "es-ES"
+  },
+  {
+    "name": "Flo (Испанский (Мексика))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.es-MX.Flo",
+    "lang": "es-MX"
+  },
+  {
+    "name": "Flo (Финский (Финляндия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.fi-FI.Flo",
+    "lang": "fi-FI"
+  },
+  {
+    "name": "Flo (Французский (Канада))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.fr-CA.Flo",
+    "lang": "fr-CA"
+  },
+  {
+    "name": "Flo (Французский (Франция))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.fr-FR.Flo",
+    "lang": "fr-FR"
+  },
+  {
+    "name": "Flo (Итальянский (Италия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.it-IT.Flo",
+    "lang": "it-IT"
+  },
+  {
+    "name": "Flo (Японский (Япония))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.ja-JP.Flo",
+    "lang": "ja-JP"
+  },
+  {
+    "name": "Flo (Корейский (Республика Корея))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.ko-KR.Flo",
+    "lang": "ko-KR"
+  },
+  {
+    "name": "Flo (Португальский (Бразилия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.pt-BR.Flo",
+    "lang": "pt-BR"
+  },
+  {
+    "name": "Flo (Китайский (Китай континентальный))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.zh-CN.Flo",
+    "lang": "zh-CN"
+  },
+  {
+    "name": "Flo (Китайский (Тайвань))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.zh-TW.Flo",
+    "lang": "zh-TW"
+  },
+  {
+    "name": "Фред",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.Fred",
+    "lang": "en-US"
+  },
+  {
+    "name": "Гита",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.te-IN.Geeta",
+    "lang": "te-IN"
+  },
+  {
+    "name": "Хорошие новости",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.GoodNews",
+    "lang": "en-US"
+  },
+  {
+    "name": "Grandma (Немецкий (Германия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.de-DE.Grandma",
+    "lang": "de-DE"
+  },
+  {
+    "name": "Grandma (Английский (Британия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.en-GB.Grandma",
+    "lang": "en-GB"
+  },
+  {
+    "name": "Grandma (Английский (США))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.en-US.Grandma",
+    "lang": "en-US"
+  },
+  {
+    "name": "Grandma (Испанский (Испания))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.es-ES.Grandma",
+    "lang": "es-ES"
+  },
+  {
+    "name": "Grandma (Испанский (Мексика))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.es-MX.Grandma",
+    "lang": "es-MX"
+  },
+  {
+    "name": "Grandma (Финский (Финляндия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.fi-FI.Grandma",
+    "lang": "fi-FI"
+  },
+  {
+    "name": "Grandma (Французский (Канада))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.fr-CA.Grandma",
+    "lang": "fr-CA"
+  },
+  {
+    "name": "Grandma (Французский (Франция))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.fr-FR.Grandma",
+    "lang": "fr-FR"
+  },
+  {
+    "name": "Grandma (Итальянский (Италия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.it-IT.Grandma",
+    "lang": "it-IT"
+  },
+  {
+    "name": "Grandma (Японский (Япония))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.ja-JP.Grandma",
+    "lang": "ja-JP"
+  },
+  {
+    "name": "Grandma (Корейский (Республика Корея))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.ko-KR.Grandma",
+    "lang": "ko-KR"
+  },
+  {
+    "name": "Grandma (Португальский (Бразилия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.pt-BR.Grandma",
+    "lang": "pt-BR"
+  },
+  {
+    "name": "Grandma (Китайский (Китай континентальный))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.zh-CN.Grandma",
+    "lang": "zh-CN"
+  },
+  {
+    "name": "Grandma (Китайский (Тайвань))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.zh-TW.Grandma",
+    "lang": "zh-TW"
+  },
+  {
+    "name": "Grandpa (Немецкий (Германия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.de-DE.Grandpa",
+    "lang": "de-DE"
+  },
+  {
+    "name": "Grandpa (Английский (Британия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.en-GB.Grandpa",
+    "lang": "en-GB"
+  },
+  {
+    "name": "Grandpa (Английский (США))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.en-US.Grandpa",
+    "lang": "en-US"
+  },
+  {
+    "name": "Grandpa (Испанский (Испания))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.es-ES.Grandpa",
+    "lang": "es-ES"
+  },
+  {
+    "name": "Grandpa (Испанский (Мексика))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.es-MX.Grandpa",
+    "lang": "es-MX"
+  },
+  {
+    "name": "Grandpa (Финский (Финляндия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.fi-FI.Grandpa",
+    "lang": "fi-FI"
+  },
+  {
+    "name": "Grandpa (Французский (Канада))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.fr-CA.Grandpa",
+    "lang": "fr-CA"
+  },
+  {
+    "name": "Grandpa (Французский (Франция))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.fr-FR.Grandpa",
+    "lang": "fr-FR"
+  },
+  {
+    "name": "Grandpa (Итальянский (Италия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.it-IT.Grandpa",
+    "lang": "it-IT"
+  },
+  {
+    "name": "Grandpa (Японский (Япония))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.ja-JP.Grandpa",
+    "lang": "ja-JP"
+  },
+  {
+    "name": "Grandpa (Корейский (Республика Корея))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.ko-KR.Grandpa",
+    "lang": "ko-KR"
+  },
+  {
+    "name": "Grandpa (Португальский (Бразилия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.pt-BR.Grandpa",
+    "lang": "pt-BR"
+  },
+  {
+    "name": "Grandpa (Китайский (Китай континентальный))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.zh-CN.Grandpa",
+    "lang": "zh-CN"
+  },
+  {
+    "name": "Grandpa (Китайский (Тайвань))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.zh-TW.Grandpa",
+    "lang": "zh-TW"
+  },
+  {
+    "name": "Шутник",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.Hysterical",
+    "lang": "en-US"
+  },
+  {
+    "name": "Иоана",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.ro-RO.Ioana",
+    "lang": "ro-RO"
+  },
+  {
+    "name": "Jacques",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.fr-FR.Jacques",
+    "lang": "fr-FR"
+  },
+  {
+    "name": "Жуана",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.pt-PT.Joana",
+    "lang": "pt-PT"
+  },
+  {
+    "name": "Джуниор",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.Junior",
+    "lang": "en-US"
+  },
+  {
+    "name": "Канья",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.th-TH.Kanya",
+    "lang": "th-TH"
+  },
+  {
+    "name": "Карен",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.en-AU.Karen",
+    "lang": "en-AU"
+  },
+  {
+    "name": "Кэти",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.Kathy",
+    "lang": "en-US"
+  },
+  {
+    "name": "Кёко",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.ja-JP.Kyoko",
+    "lang": "ja-JP"
+  },
+  {
+    "name": "Лана",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.hr-HR.Lana",
+    "lang": "hr-HR"
+  },
+  {
+    "name": "Лаура",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.sk-SK.Laura",
+    "lang": "sk-SK"
+  },
+  {
+    "name": "Леха",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.hi-IN.Lekha",
+    "lang": "hi-IN"
+  },
+  {
+    "name": "Леся",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.uk-UA.Lesya",
+    "lang": "uk-UA"
+  },
+  {
+    "name": "Линь",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.vi-VN.Linh",
+    "lang": "vi-VN"
+  },
+  {
+    "name": "Лучана",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.pt-BR.Luciana",
+    "lang": "pt-BR"
+  },
+  {
+    "name": "Маджед",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.ar-001.Maged",
+    "lang": "ar-001"
+  },
+  {
+    "name": "Тюнде",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.hu-HU.Mariska",
+    "lang": "hu-HU"
+  },
+  {
+    "name": "Мэй-Цзя",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.zh-TW.Meijia",
+    "lang": "zh-TW"
+  },
+  {
+    "name": "Мелина",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.el-GR.Melina",
+    "lang": "el-GR"
+  },
+  {
+    "name": "Милена (Русский (Россия))",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.ru-RU.Milena",
+    "lang": "ru-RU"
+  },
+  {
+    "name": "Мойра",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.en-IE.Moira",
+    "lang": "en-IE"
+  },
+  {
+    "name": "Моника",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.es-ES.Monica",
+    "lang": "es-ES"
+  },
+  {
+    "name": "Монсе",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.ca-ES.Montserrat",
+    "lang": "ca-ES"
+  },
+  {
+    "name": "Нора",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.nb-NO.Nora",
+    "lang": "nb-NO"
+  },
+  {
+    "name": "Ona",
+    "url": "urn:moz-tts:osx:com.apple.voice.Ona",
+    "lang": "lt-LT"
+  },
+  {
+    "name": "Орган",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.Organ",
+    "lang": "en-US"
+  },
+  {
+    "name": "Паулина",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.es-MX.Paulina",
+    "lang": "es-MX"
+  },
+  {
+    "name": "Пия",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.bn-IN.Paya",
+    "lang": "bn-IN"
+  },
+  {
+    "name": "Суперзвезда",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.Princess",
+    "lang": "en-US"
+  },
+  {
+    "name": "Ральф",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.Ralph",
+    "lang": "en-US"
+  },
+  {
+    "name": "Reed (Немецкий (Германия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.de-DE.Reed",
+    "lang": "de-DE"
+  },
+  {
+    "name": "Reed (Английский (Британия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.en-GB.Reed",
+    "lang": "en-GB"
+  },
+  {
+    "name": "Reed (Английский (США))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.en-US.Reed",
+    "lang": "en-US"
+  },
+  {
+    "name": "Reed (Испанский (Испания))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.es-ES.Reed",
+    "lang": "es-ES"
+  },
+  {
+    "name": "Reed (Испанский (Мексика))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.es-MX.Reed",
+    "lang": "es-MX"
+  },
+  {
+    "name": "Reed (Финский (Финляндия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.fi-FI.Reed",
+    "lang": "fi-FI"
+  },
+  {
+    "name": "Reed (Французский (Канада))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.fr-CA.Reed",
+    "lang": "fr-CA"
+  },
+  {
+    "name": "Reed (Итальянский (Италия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.it-IT.Reed",
+    "lang": "it-IT"
+  },
+  {
+    "name": "Reed (Японский (Япония))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.ja-JP.Reed",
+    "lang": "ja-JP"
+  },
+  {
+    "name": "Reed (Корейский (Республика Корея))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.ko-KR.Reed",
+    "lang": "ko-KR"
+  },
+  {
+    "name": "Reed (Португальский (Бразилия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.pt-BR.Reed",
+    "lang": "pt-BR"
+  },
+  {
+    "name": "Reed (Китайский (Китай континентальный))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.zh-CN.Reed",
+    "lang": "zh-CN"
+  },
+  {
+    "name": "Reed (Китайский (Тайвань))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.zh-TW.Reed",
+    "lang": "zh-TW"
+  },
+  {
+    "name": "Риши",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.en-IN.Rishi",
+    "lang": "en-IN"
+  },
+  {
+    "name": "Rocko (Немецкий (Германия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.de-DE.Rocko",
+    "lang": "de-DE"
+  },
+  {
+    "name": "Rocko (Английский (Британия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.en-GB.Rocko",
+    "lang": "en-GB"
+  },
+  {
+    "name": "Rocko (Английский (США))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.en-US.Rocko",
+    "lang": "en-US"
+  },
+  {
+    "name": "Rocko (Испанский (Испания))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.es-ES.Rocko",
+    "lang": "es-ES"
+  },
+  {
+    "name": "Rocko (Испанский (Мексика))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.es-MX.Rocko",
+    "lang": "es-MX"
+  },
+  {
+    "name": "Rocko (Финский (Финляндия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.fi-FI.Rocko",
+    "lang": "fi-FI"
+  },
+  {
+    "name": "Rocko (Французский (Канада))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.fr-CA.Rocko",
+    "lang": "fr-CA"
+  },
+  {
+    "name": "Rocko (Французский (Франция))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.fr-FR.Rocko",
+    "lang": "fr-FR"
+  },
+  {
+    "name": "Rocko (Итальянский (Италия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.it-IT.Rocko",
+    "lang": "it-IT"
+  },
+  {
+    "name": "Rocko (Японский (Япония))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.ja-JP.Rocko",
+    "lang": "ja-JP"
+  },
+  {
+    "name": "Rocko (Корейский (Республика Корея))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.ko-KR.Rocko",
+    "lang": "ko-KR"
+  },
+  {
+    "name": "Rocko (Португальский (Бразилия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.pt-BR.Rocko",
+    "lang": "pt-BR"
+  },
+  {
+    "name": "Rocko (Китайский (Китай континентальный))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.zh-CN.Rocko",
+    "lang": "zh-CN"
+  },
+  {
+    "name": "Rocko (Китайский (Тайвань))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.zh-TW.Rocko",
+    "lang": "zh-TW"
+  },
+  {
+    "name": "Саманта",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.en-US.Samantha",
+    "lang": "en-US"
+  },
+  {
+    "name": "Sandy (Немецкий (Германия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.de-DE.Sandy",
+    "lang": "de-DE"
+  },
+  {
+    "name": "Sandy (Английский (Британия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.en-GB.Sandy",
+    "lang": "en-GB"
+  },
+  {
+    "name": "Sandy (Английский (США))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.en-US.Sandy",
+    "lang": "en-US"
+  },
+  {
+    "name": "Sandy (Испанский (Испания))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.es-ES.Sandy",
+    "lang": "es-ES"
+  },
+  {
+    "name": "Sandy (Испанский (Мексика))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.es-MX.Sandy",
+    "lang": "es-MX"
+  },
+  {
+    "name": "Sandy (Финский (Финляндия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.fi-FI.Sandy",
+    "lang": "fi-FI"
+  },
+  {
+    "name": "Sandy (Французский (Канада))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.fr-CA.Sandy",
+    "lang": "fr-CA"
+  },
+  {
+    "name": "Sandy (Французский (Франция))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.fr-FR.Sandy",
+    "lang": "fr-FR"
+  },
+  {
+    "name": "Sandy (Итальянский (Италия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.it-IT.Sandy",
+    "lang": "it-IT"
+  },
+  {
+    "name": "Sandy (Японский (Япония))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.ja-JP.Sandy",
+    "lang": "ja-JP"
+  },
+  {
+    "name": "Sandy (Корейский (Республика Корея))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.ko-KR.Sandy",
+    "lang": "ko-KR"
+  },
+  {
+    "name": "Sandy (Португальский (Бразилия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.pt-BR.Sandy",
+    "lang": "pt-BR"
+  },
+  {
+    "name": "Sandy (Китайский (Китай континентальный))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.zh-CN.Sandy",
+    "lang": "zh-CN"
+  },
+  {
+    "name": "Sandy (Китайский (Тайвань))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.zh-TW.Sandy",
+    "lang": "zh-TW"
+  },
+  {
+    "name": "Сара",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.da-DK.Sara",
+    "lang": "da-DK"
+  },
+  {
+    "name": "Сату",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.fi-FI.Satu",
+    "lang": "fi-FI"
+  },
+  {
+    "name": "Shelley (Немецкий (Германия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.de-DE.Shelley",
+    "lang": "de-DE"
+  },
+  {
+    "name": "Shelley (Английский (Британия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.en-GB.Shelley",
+    "lang": "en-GB"
+  },
+  {
+    "name": "Shelley (Английский (США))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.en-US.Shelley",
+    "lang": "en-US"
+  },
+  {
+    "name": "Shelley (Испанский (Испания))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.es-ES.Shelley",
+    "lang": "es-ES"
+  },
+  {
+    "name": "Shelley (Испанский (Мексика))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.es-MX.Shelley",
+    "lang": "es-MX"
+  },
+  {
+    "name": "Shelley (Финский (Финляндия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.fi-FI.Shelley",
+    "lang": "fi-FI"
+  },
+  {
+    "name": "Shelley (Французский (Канада))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.fr-CA.Shelley",
+    "lang": "fr-CA"
+  },
+  {
+    "name": "Shelley (Французский (Франция))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.fr-FR.Shelley",
+    "lang": "fr-FR"
+  },
+  {
+    "name": "Shelley (Итальянский (Италия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.it-IT.Shelley",
+    "lang": "it-IT"
+  },
+  {
+    "name": "Shelley (Японский (Япония))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.ja-JP.Shelley",
+    "lang": "ja-JP"
+  },
+  {
+    "name": "Shelley (Корейский (Республика Корея))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.ko-KR.Shelley",
+    "lang": "ko-KR"
+  },
+  {
+    "name": "Shelley (Португальский (Бразилия))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.pt-BR.Shelley",
+    "lang": "pt-BR"
+  },
+  {
+    "name": "Shelley (Китайский (Китай континентальный))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.zh-CN.Shelley",
+    "lang": "zh-CN"
+  },
+  {
+    "name": "Shelley (Китайский (Тайвань))",
+    "url": "urn:moz-tts:osx:com.apple.eloquence.zh-TW.Shelley",
+    "lang": "zh-TW"
+  },
+  {
+    "name": "Син-Чжи",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.zh-HK.Sinji",
+    "lang": "zh-HK"
+  },
+  {
+    "name": "Tara",
+    "url": "urn:moz-tts:osx:com.apple.voice.Tara",
+    "lang": "en-IN"
+  },
+  {
+    "name": "Тесса",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.en-ZA.Tessa",
+    "lang": "en-ZA"
+  },
+  {
+    "name": "Томас",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.fr-FR.Thomas",
+    "lang": "fr-FR"
+  },
+  {
+    "name": "Тина",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.sl-SI.Tina",
+    "lang": "sl-SI"
+  },
+  {
+    "name": "Тин-Тин",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.zh-CN.Tingting",
+    "lang": "zh-CN"
+  },
+  {
+    "name": "Триноид",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.Trinoids",
+    "lang": "en-US"
+  },
+  {
+    "name": "Вани",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.ta-IN.Vani",
+    "lang": "ta-IN"
+  },
+  {
+    "name": "Шепот",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.Whisper",
+    "lang": "en-US"
+  },
+  {
+    "name": "Ксандер",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.nl-NL.Xander",
+    "lang": "nl-NL"
+  },
+  {
+    "name": "Ялда",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.tr-TR.Yelda",
+    "lang": "tr-TR"
+  },
+  {
+    "name": "Юна",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.ko-KR.Yuna",
+    "lang": "ko-KR"
+  },
+  {
+    "name": "Зарвокс",
+    "url": "urn:moz-tts:osx:com.apple.speech.synthesis.voice.Zarvox",
+    "lang": "en-US"
+  },
+  {
+    "name": "Zosia",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.pl-PL.Zosia",
+    "lang": "pl-PL"
+  },
+  {
+    "name": "Зузана",
+    "url": "urn:moz-tts:osx:com.apple.voice.compact.cs-CZ.Zuzana",
+    "lang": "cs-CZ"
+  }
+]

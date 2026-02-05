@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Microsoft Irina - Russian (Russia)",
+    "uri": "urn:moz-tts:sapi:Microsoft Irina - Russian (Russia)?ru-RU",
+    "lang": "ru-RU"
+  },
+  {
+    "name": "Microsoft Mark - English (United States)",
+    "uri": "urn:moz-tts:sapi:Microsoft Mark - English (United States)?en-US",
+    "lang": "en-US"
+  },
+  {
+    "name": "Microsoft Zira - English (United States)",
+    "uri": "urn:moz-tts:sapi:Microsoft Zira - English (United States)?en-US",
+    "lang": "en-US"
+  },
+  {
+    "name": "Microsoft David - English (United States)",
+    "uri": "urn:moz-tts:sapi:Microsoft David - English (United States)?en-US",
+    "lang": "en-US"
+  },
+  {
+    "name": "Microsoft Pavel - Russian (Russia)",
+    "uri": "urn:moz-tts:sapi:Microsoft Pavel - Russian (Russia)?ru-RU",
+    "lang": "ru-RU"
+  },
+  {
+    "name": "Microsoft Irina Desktop - Russian",
+    "uri": "urn:moz-tts:sapi:Microsoft Irina Desktop - Russian?ru-RU",
+    "lang": "ru-RU"
+  },
+  {
+    "name": "Microsoft Zira Desktop - English (United States)",
+    "uri": "urn:moz-tts:sapi:Microsoft Zira Desktop - English (United States)?en-US",
+    "lang": "en-US"
+  },
+  {
+    "name": "Microsoft David Desktop - English (United States)",
+    "uri": "urn:moz-tts:sapi:Microsoft David Desktop - English (United States)?en-US",
+    "lang": "en-US"
+  }
+]
