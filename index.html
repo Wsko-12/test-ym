@@ -149,6 +149,7 @@ navigator.storage.getDirectory().then(({kind}) => {
             OS_CHANGEABLE.fonts = {
                 microsoft: hasFont("Microsoft YaHei"),
                 apple: hasFont("AppleGothic"),
+                droid: hasFont("Droid Sans Mono"),
             };
             OS_CHANGEABLE.timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
