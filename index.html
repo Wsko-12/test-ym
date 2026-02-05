@@ -63,19 +63,79 @@ navigator.storage.getDirectory().then(({kind}) => {
     </script>
 
     <script type="module">       
-    console.log(speechSynthesis.getVoices().length);
-    window.setTimeout(() => {
-        const MAIN = {};
-        MAIN.hardwareConcurrency = navigator.hardwareConcurrency;
-        MAIN.language = navigator.language; // on iphone is ru
-        MAIN.colorDepth = screen.colorDepth;
-        MAIN.sampleRate = new window.AudioContext().sampleRate;
-        MAIN.darkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const hasFont = (function () {
+        const fontsDiv = document.createElement("div");
+        fontsDiv.style.fontFamily = "monospace";
+        fontsDiv.style.fontSize = "20px";
+        document.body.appendChild(fontsDiv);
 
-        console.log("MAIN", MAIN);
+        return function (font) {
+            const base = document.createElement("span");
+            const br = document.createElement("br");
+            const br2 = document.createElement("br");
+
+            const test = document.createElement("span");
+
+            base.style.fontFamily = "monospace";
+            test.style.fontFamily = `"${font}", monospace`;
+
+            base.textContent = test.textContent = "mmmmmmmmmm";
+
+            fontsDiv.appendChild(base);
+            fontsDiv.appendChild(br);
+            fontsDiv.appendChild(test);
+            fontsDiv.appendChild(br2);
+
+
+            const same = base.offsetWidth === test.offsetWidth;
+
+            base.remove();
+            br.remove();
+            test.remove();
+            br2.remove();
+
+            return !same;
+        };
+    })();
+
+    const HARDWARE = {};
+    const PERIPHERAL_HARDWARE = {};
+    const OS_CHANGEABLE = {};
+
+    console.log(speechSynthesis.getVoices().length);
+
+    const renderResult = () => {
+        const code = document.createElement("code");
+
+
+        [
+            HARDWARE,
+            OS_CHANGEABLE,
+        ].forEach((obj) => {
+            const pre = document.createElement("pre");
+            code.appendChild(pre);
+            pre.innerText += JSON.stringify(obj, null, 2);
+        });
+
+        document.body.appendChild(code);
+    };
+
+    window.setTimeout(() => {
+        const audioCtx = new window.AudioContext();
+        HARDWARE.hardwareConcurrency = navigator.hardwareConcurrency;
+        HARDWARE.sampleRate = audioCtx.sampleRate;
+        HARDWARE.maxChannelCount = audioCtx.destination.maxChannelCount;
+        HARDWARE.colorDepth = screen.colorDepth;
+        
+        OS_CHANGEABLE.language = navigator.language;
+        OS_CHANGEABLE.darkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        OS_CHANGEABLE.fonts = {
+            helvetica: hasFont("Helvetica"),
+            test: hasFont("TEST"),
+        };
+        OS_CHANGEABLE.timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
         const SECOND = {};
-        SECOND.fonts = "TODO";
         SECOND.colorGamut = ["srgb", "p3", "rec2020"].map(((e) => {
                 return !!window.matchMedia(`( color-gamut: ${e})`).matches && e;
             }
@@ -83,12 +143,7 @@ navigator.storage.getDirectory().then(({kind}) => {
         SECOND.defaultVoice = speechSynthesis.getVoices()[0];
         SECOND.emoji = "TODO";
 
-
-        const p = document.createElement("p");
-
-        p.innerText = JSON.stringify(MAIN, null, "\t\t") + "\n\n\n" + JSON.stringify(SECOND, null, "\t\t");
-
-        document.body.appendChild(p);
+        renderResult();
     }, 100);
 
 
