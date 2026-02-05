@@ -99,6 +99,7 @@ navigator.storage.getDirectory().then(({kind}) => {
         })();
 
         const HARDWARE = {};
+        const HARDWARE_UNSTABLE = {}
         const PERIPHERAL_HARDWARE = {};
         const OS_CHANGEABLE = {};
 
@@ -127,9 +128,12 @@ navigator.storage.getDirectory().then(({kind}) => {
             console.log(wg2)
             HARDWARE.wg2 = {
                 MAX_VIEWPORT_DIMS: Array.from(wg2.getParameter(wg2.MAX_VIEWPORT_DIMS)).slice(0, 2).join("|"),
-                MAX_SAMPLES: wg2.getParameter(wg2.MAX_SAMPLES),
                 MAX_VERTEX_UNIFORM_COMPONENTS: wg2.getParameter(wg2.MAX_VERTEX_UNIFORM_COMPONENTS),
                 MAX_VERTEX_UNIFORM_VECTORS: wg2.getParameter(wg2.MAX_VERTEX_UNIFORM_VECTORS),
+            }
+
+            HARDWARE_UNSTABLE.wg2 = {
+                MAX_SAMPLES: wg2.getParameter(wg2.MAX_SAMPLES),
             }
         }
 
@@ -138,7 +142,7 @@ navigator.storage.getDirectory().then(({kind}) => {
             HARDWARE.hardwareConcurrency = navigator.hardwareConcurrency;
             HARDWARE.sampleRate = audioCtx.sampleRate;
             HARDWARE.maxChannelCount = audioCtx.destination.maxChannelCount;
-            HARDWARE.colorDepth = screen.colorDepth;
+            HARDWARE_UNSTABLE.colorDepth = screen.colorDepth;
 
             OS_CHANGEABLE.language = navigator.language;
             OS_CHANGEABLE.darkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
