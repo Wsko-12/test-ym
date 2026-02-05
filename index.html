@@ -130,7 +130,7 @@ navigator.storage.getDirectory().then(({kind}) => {
             OS_CHANGEABLE.language = navigator.language;
             OS_CHANGEABLE.darkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
             OS_CHANGEABLE.fonts = {
-                microsoft: hasFont("Microsoft Sans Serif"),
+                microsoft: hasFont("Microsoft YaHei"),
                 apple: hasFont("AppleGothic"),
             };
             OS_CHANGEABLE.timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
