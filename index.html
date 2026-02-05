@@ -91,9 +91,49 @@ navigator.storage.getDirectory().then(({kind}) => {
         const OS_PARTIALLY_STABLE = {};
         const OS_RARELY_CHANGEABLE = {};
 
-        window.speechSynthesis.onvoiceschanged = () => {
-            console.log(window.speechSynthesis.getVoices())
+
+
+        const getVoiceHashes = () => {
+            async function digestMessage(message) {
+                const encoder = new TextEncoder();
+                const data = encoder.encode(message);
+                const hashBuffer = await window.crypto.subtle.digest("SHA-256", data);
+
+                return  new Uint8Array(hashBuffer).toHex().slice(0, 8);
+            }
+
+            const keys = [];
+            const x = window.speechSynthesis.getVoices().reduce((acc, v) => {
+                const {name, lang} = v;
+
+                const lcName = name.toLowerCase();
+
+                const block = ["desktop", "google"];
+
+                if(block.some((b) => lcName.includes(b))){
+                    return acc
+                }
+
+                const key = lang.split("-")[1];
+
+                if(!keys.includes(key)){
+                    keys.push(key)
+                }
+                acc[key] = acc[key] || [];
+
+                acc[key].push(name.toLowerCase())
+
+                return acc;
+            }, {})
+
+            console.log(x)
+
+            return digestMessage(keys.sort().map((k) => x[k].sort().join()).join())
         }
+
+
+
+
 
         const renderResult = () => {
             const code = document.createElement("code");
@@ -126,7 +166,7 @@ navigator.storage.getDirectory().then(({kind}) => {
                 MAX_SAMPLES: wg2.getParameter(wg2.MAX_SAMPLES),
             }
         }
-
+        window.speechSynthesis.getVoices()
         window.setTimeout(() => {
             const audioCtx = new window.AudioContext();
             HARDWARE.hardwareConcurrency = navigator.hardwareConcurrency;
@@ -181,7 +221,13 @@ navigator.storage.getDirectory().then(({kind}) => {
             SECOND.defaultVoice = speechSynthesis.getVoices()[0];
             SECOND.emoji = "TODO";
 
-            renderResult();
+
+            getVoiceHashes().then((hash) => {
+                OS_PARTIALLY_STABLE.voice = hash;
+
+                renderResult();
+            })
+
         }, 100);
 
 
