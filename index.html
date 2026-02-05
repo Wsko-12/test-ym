@@ -120,6 +120,19 @@ navigator.storage.getDirectory().then(({kind}) => {
             document.body.appendChild(code);
         };
 
+
+        const webGlFp = () => {
+            const wg2 = document.createElement("canvas").getContext("webgl2");
+
+            console.log(wg2)
+            HARDWARE.wg2 = {
+                MAX_VIEWPORT_DIMS: Array.from(wg2.getParameter(wg2.MAX_VIEWPORT_DIMS)).slice(0, 2).join("|"),
+                MAX_SAMPLES: wg2.getParameter(wg2.MAX_SAMPLES),
+                MAX_VERTEX_UNIFORM_COMPONENTS: wg2.getParameter(wg2.MAX_VERTEX_UNIFORM_COMPONENTS),
+                MAX_VERTEX_UNIFORM_VECTORS: wg2.getParameter(wg2.MAX_VERTEX_UNIFORM_VECTORS),
+            }
+        }
+
         window.setTimeout(() => {
             const audioCtx = new window.AudioContext();
             HARDWARE.hardwareConcurrency = navigator.hardwareConcurrency;
@@ -135,6 +148,8 @@ navigator.storage.getDirectory().then(({kind}) => {
             };
             OS_CHANGEABLE.timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
+
+            webGlFp()
             const SECOND = {};
             SECOND.colorGamut = ["srgb", "p3", "rec2020"].map(((e) => {
                     return !!window.matchMedia(`( color-gamut: ${e})`).matches && e;
