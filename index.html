@@ -90,6 +90,7 @@ navigator.storage.getDirectory().then(({kind}) => {
         const PERIPHERAL_HARDWARE = {};
         const OS_PARTIALLY_STABLE = {};
         const OS_RARELY_CHANGEABLE = {};
+        const UNSTABLE = {};
 
 
 
@@ -223,7 +224,7 @@ navigator.storage.getDirectory().then(({kind}) => {
 
 
             getVoiceHashes().then((hash) => {
-                OS_PARTIALLY_STABLE.voice = hash;
+                UNSTABLE.voice = hash;
 
                 renderResult();
             })
