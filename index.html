@@ -79,7 +79,7 @@ navigator.storage.getDirectory().then(({kind}) => {
                 base.style.fontFamily = "monospace";
                 test.style.fontFamily = `"${font}", monospace`;
 
-                base.textContent = test.textContent = "mmmmmmmmmm";
+                base.textContent = test.textContent = "mmmmmmmmmmlli";
 
                 fontsDiv.appendChild(base);
                 fontsDiv.appendChild(br);
@@ -143,10 +143,37 @@ navigator.storage.getDirectory().then(({kind}) => {
             HARDWARE.maxChannelCount = audioCtx.destination.maxChannelCount;
             HARDWARE_UNSTABLE.colorDepth = screen.colorDepth;
 
+            const HEAP_FONTS = [
+                "Segoe UI",
+                "Calibri",
+                "San Francisco",
+                "Helvetica Neue",
+                "Ubuntu",
+                "Cantarell",
+                "Yu Gothic",
+                "Hiragino Sans",
+                "PingFang SC",
+                "Malgun Gothic",
+                "Noto Sans CJK",
+                "Cambria",
+                "Consolas",
+                "Myriad Pro",
+                "Avenir",
+                "JetBrains Mono",
+                "Fira Code",
+                "DejaVu Sans",
+                "Liberation Serif",
+                "Roboto",
+                "Symbol",
+                "Lora",
+                "MingLiU_HKSCS-ExtB"
+            ].map((font) => Number(hasFont(font))).join("")
+
             OS_PARTIALLY_STABLE.fonts = {
                 microsoft: hasFont("Microsoft YaHei"),
                 apple: hasFont("AppleGothic"),
                 droid: hasFont("Droid Sans Mono"),
+                heapFonts: `${Number.parseInt(HEAP_FONTS, 2)}|${HEAP_FONTS}`,
             };
 
             OS_RARELY_CHANGEABLE.language = navigator.language;
