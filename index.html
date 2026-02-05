@@ -64,24 +64,19 @@ navigator.storage.getDirectory().then(({kind}) => {
 
     <script type="module">
         const hasFont = (function () {
-            // Создаем canvas один раз
             const canvas = document.createElement("canvas");
             const ctx = canvas.getContext("2d");
 
-            // Базовый текст для теста
             const testText = "mmmmmmmmmmlli";
 
-            // Базовые шрифты для сравнения
             const baseFonts = ["monospace", "serif", "sans-serif"];
 
-            return function (font) {
-                // Сохраняем размеры для базовых шрифтов
-                const baseSizes = baseFonts.map(base => {
-                    ctx.font = `20px ${base}`;
-                    return ctx.measureText(testText).width;
-                });
+            const baseSizes = baseFonts.map(base => {
+                ctx.font = `20px ${base}`;
+                return ctx.measureText(testText).width;
+            });
 
-                // Измеряем тестовый шрифт с fallback на каждый базовый
+            return function (font) {
                 return baseSizes.some((baseWidth, i) => {
                     ctx.font = `20px "${font}", ${baseFonts[i]}`;
                     const width = ctx.measureText(testText).width;
