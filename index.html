@@ -111,6 +111,7 @@ navigator.storage.getDirectory().then(({kind}) => {
 
             [
                 HARDWARE,
+                HARDWARE_UNSTABLE,
                 OS_CHANGEABLE,
             ].forEach((obj) => {
                 const pre = document.createElement("pre");
@@ -125,7 +126,6 @@ navigator.storage.getDirectory().then(({kind}) => {
         const webGlFp = () => {
             const wg2 = document.createElement("canvas").getContext("webgl2");
 
-            console.log(wg2)
             HARDWARE.wg2 = {
                 MAX_VIEWPORT_DIMS: Array.from(wg2.getParameter(wg2.MAX_VIEWPORT_DIMS)).slice(0, 2).join("|"),
                 MAX_VERTEX_UNIFORM_COMPONENTS: wg2.getParameter(wg2.MAX_VERTEX_UNIFORM_COMPONENTS),
