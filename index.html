@@ -64,37 +64,29 @@ navigator.storage.getDirectory().then(({kind}) => {
 
     <script type="module">
         const hasFont = (function () {
-            const fontsDiv = document.createElement("div");
-            fontsDiv.style.fontFamily = "monospace";
-            fontsDiv.style.fontSize = "20px";
-            document.body.appendChild(fontsDiv);
+            // Создаем canvas один раз
+            const canvas = document.createElement("canvas");
+            const ctx = canvas.getContext("2d");
+
+            // Базовый текст для теста
+            const testText = "mmmmmmmmmmlli";
+
+            // Базовые шрифты для сравнения
+            const baseFonts = ["monospace", "serif", "sans-serif"];
 
             return function (font) {
-                const base = document.createElement("span");
-                const br = document.createElement("br");
-                const br2 = document.createElement("br");
+                // Сохраняем размеры для базовых шрифтов
+                const baseSizes = baseFonts.map(base => {
+                    ctx.font = `20px ${base}`;
+                    return ctx.measureText(testText).width;
+                });
 
-                const test = document.createElement("span");
-
-                base.style.fontFamily = "monospace";
-                test.style.fontFamily = `"${font}", monospace`;
-
-                base.textContent = test.textContent = "mmmmmmmmmmlli";
-
-                fontsDiv.appendChild(base);
-                fontsDiv.appendChild(br);
-                fontsDiv.appendChild(test);
-                fontsDiv.appendChild(br2);
-
-
-                const same = base.offsetWidth === test.offsetWidth;
-
-                base.remove();
-                br.remove();
-                test.remove();
-                br2.remove();
-
-                return !same;
+                // Измеряем тестовый шрифт с fallback на каждый базовый
+                return baseSizes.some((baseWidth, i) => {
+                    ctx.font = `20px "${font}", ${baseFonts[i]}`;
+                    const width = ctx.measureText(testText).width;
+                    return width !== baseWidth;
+                });
             };
         })();
 
