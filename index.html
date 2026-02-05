@@ -101,22 +101,21 @@ navigator.storage.getDirectory().then(({kind}) => {
         const HARDWARE = {};
         const HARDWARE_UNSTABLE = {}
         const PERIPHERAL_HARDWARE = {};
-        const OS_CHANGEABLE = {};
-
-        console.log(speechSynthesis.getVoices().length);
+        const OS_PARTIALLY_STABLE = {};
+        const OS_RARELY_CHANGEABLE = {};
 
         const renderResult = () => {
             const code = document.createElement("code");
 
-
             [
-                HARDWARE,
-                HARDWARE_UNSTABLE,
-                OS_CHANGEABLE,
-            ].forEach((obj) => {
+                ["HARDWARE", HARDWARE],
+                ["HARDWARE_UNSTABLE", HARDWARE_UNSTABLE],
+                ["OS_PARTIALLY_STABLE", OS_PARTIALLY_STABLE],
+                ["OS_RARELY_CHANGEABLE", OS_RARELY_CHANGEABLE],
+            ].forEach(([name, obj]) => {
                 const pre = document.createElement("pre");
                 code.appendChild(pre);
-                pre.innerText += JSON.stringify(obj, null, 2);
+                pre.innerText += `${name}:\n ${JSON.stringify(obj, null, 2)} \n\n`;
             });
 
             document.body.appendChild(code);
@@ -144,14 +143,15 @@ navigator.storage.getDirectory().then(({kind}) => {
             HARDWARE.maxChannelCount = audioCtx.destination.maxChannelCount;
             HARDWARE_UNSTABLE.colorDepth = screen.colorDepth;
 
-            OS_CHANGEABLE.language = navigator.language;
-            OS_CHANGEABLE.darkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
-            OS_CHANGEABLE.fonts = {
+            OS_PARTIALLY_STABLE.fonts = {
                 microsoft: hasFont("Microsoft YaHei"),
                 apple: hasFont("AppleGothic"),
                 droid: hasFont("Droid Sans Mono"),
             };
-            OS_CHANGEABLE.timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+            OS_RARELY_CHANGEABLE.language = navigator.language;
+            OS_RARELY_CHANGEABLE.darkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            OS_RARELY_CHANGEABLE.timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
 
             webGlFp()
