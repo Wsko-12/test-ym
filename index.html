@@ -49,7 +49,7 @@
     <!-- <script src="https://wsko-12.github.io/wwskgithubo.js"></script> -->
 </head>
 <body>
-<h1>Test</h1>
+<h1 id="fingerprint"></h1>
 </body>
 <script>
     const p =           document.createElement("p")
@@ -282,16 +282,38 @@
 
 
         webGlFp()
-        const SECOND = {};
-        SECOND.colorGamut = ["srgb", "p3", "rec2020"].map(((e) => {
-                return !!window.matchMedia(`( color-gamut: ${e})`).matches && e;
-            }
-        )).filter(Boolean);
-        SECOND.defaultVoice = speechSynthesis.getVoices()[0];
-        SECOND.emoji = "TODO";
 
         getVoicesHash().then((result) => {
             OS_PARTIALLY_STABLE.voice = result;
+
+            const sum = "" +
+                HARDWARE.hardwareConcurrency +
+                HARDWARE.sampleRate +
+                HARDWARE.maxChannelCount +
+                HARDWARE.wg2.MAX_VIEWPORT_DIMS +
+                HARDWARE.wg2.MAX_VERTEX_UNIFORM_COMPONENTS +
+                HARDWARE.wg2.MAX_VERTEX_UNIFORM_VECTORS +
+                Number(OS_PARTIALLY_STABLE.fonts.microsoft) +
+                Number(OS_PARTIALLY_STABLE.fonts.apple) +
+                Number(OS_PARTIALLY_STABLE.fonts.droid) +
+                HEAP_FONTS +
+                OS_PARTIALLY_STABLE.voice +
+                OS_RARELY_CHANGEABLE.language +
+                OS_RARELY_CHANGEABLE.darkTheme +
+                OS_RARELY_CHANGEABLE.timeZone;
+
+
+            async function digestMessage(message) {
+                const encoder = new TextEncoder();
+                const data = encoder.encode(message);
+                const hashBuffer = await window.crypto.subtle.digest("SHA-256", data);
+
+                return  new Uint8Array(hashBuffer).toHex().slice(0, 8);
+            }
+            digestMessage(sum).then((result) => {
+                fingerprint.innerText = result;
+            })
+
             renderResult();
         });
     };
