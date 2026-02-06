@@ -95,21 +95,13 @@ navigator.storage.getDirectory().then(({kind}) => {
 
 
         const getVoiceHashes = () => {
-            async function digestMessage(message) {
-                const encoder = new TextEncoder();
-                const data = encoder.encode(message);
-                const hashBuffer = await window.crypto.subtle.digest("SHA-256", data);
-
-                return  new Uint8Array(hashBuffer).toHex().slice(0, 8);
-            }
-
             const keys = [];
             const x = window.speechSynthesis.getVoices().reduce((acc, v) => {
                 const {name, lang} = v;
 
                 const lcName = name.toLowerCase();
 
-                const block = ["desktop", "google"];
+                const block = ["google"];
 
                 if(block.some((b) => lcName.includes(b))){
                     return acc
@@ -129,10 +121,12 @@ navigator.storage.getDirectory().then(({kind}) => {
 
             console.log(x)
 
-            return digestMessage(keys.sort().map((k) => x[k].sort().join()).join())
+            const features = extractFeatures(x);
+
+            const fingerprint = simHash(features).toString(16);
+
+            return  fingerprint
         }
-
-
 
 
 
@@ -144,6 +138,7 @@ navigator.storage.getDirectory().then(({kind}) => {
                 ["HARDWARE_UNSTABLE", HARDWARE_UNSTABLE],
                 ["OS_PARTIALLY_STABLE", OS_PARTIALLY_STABLE],
                 ["OS_RARELY_CHANGEABLE", OS_RARELY_CHANGEABLE],
+                ["UNSTABLE", UNSTABLE],
             ].forEach(([name, obj]) => {
                 const pre = document.createElement("pre");
                 code.appendChild(pre);
@@ -167,7 +162,72 @@ navigator.storage.getDirectory().then(({kind}) => {
                 MAX_SAMPLES: wg2.getParameter(wg2.MAX_SAMPLES),
             }
         }
-        window.speechSynthesis.getVoices()
+        window.speechSynthesis.getVoices();
+
+
+        function normalizeVoice(str) {
+            return str
+                .toLowerCase()
+                .replace(/\([^)]*\)/g, '')     // убрать (russia), (us)
+                .replace(/[^a-z\s]/g, '')      // только буквы
+                .replace(/\s+/g, ' ')          // лишние пробелы
+                .trim();
+        }
+
+        function shingles(str, size = 3) {
+            const result = [];
+            for (let i = 0; i <= str.length - size; i++) {
+                result.push(str.slice(i, i + size));
+            }
+            return result;
+        }
+
+
+        function extractFeatures(obj) {
+            const features = [];
+
+            for (const voices of Object.values(obj)) {
+                for (const voice of voices) {
+                    const norm = normalizeVoice(voice);
+                    features.push(...shingles(norm, 3));
+                }
+            }
+
+            return features;
+        }
+
+
+        function hash64(str) {
+            let h = 0n;
+            for (let i = 0; i < str.length; i++) {
+                h = (h << 5n) - h + BigInt(str.charCodeAt(i));
+                h &= (1n << 64n) - 1n;
+            }
+            return h;
+        }
+
+        function simHash(features) {
+            const bits = Array(64).fill(0);
+
+            for (const f of features) {
+                const h = hash64(f);
+                for (let i = 0; i < 64; i++) {
+                    bits[i] += (h >> BigInt(i)) & 1n ? 1 : -1;
+                }
+            }
+
+            let result = 0n;
+            for (let i = 0; i < 64; i++) {
+                if (bits[i] > 0) {
+                    result |= 1n << BigInt(i);
+                }
+            }
+
+            return result;
+        }
+
+
+
         window.setTimeout(() => {
             const audioCtx = new window.AudioContext();
             HARDWARE.hardwareConcurrency = navigator.hardwareConcurrency;
@@ -222,12 +282,9 @@ navigator.storage.getDirectory().then(({kind}) => {
             SECOND.defaultVoice = speechSynthesis.getVoices()[0];
             SECOND.emoji = "TODO";
 
+            UNSTABLE.voice = getVoiceHashes();
+            renderResult();
 
-            getVoiceHashes().then((hash) => {
-                UNSTABLE.voice = hash;
-
-                renderResult();
-            })
 
         }, 100);
 
