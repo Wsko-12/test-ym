@@ -169,7 +169,6 @@ navigator.storage.getDirectory().then(({kind}) => {
             return str
                 .toLowerCase()
                 .replace(/\([^)]*\)/g, '')     // убрать (russia), (us)
-                .replace(/[^a-z\s]/g, '')      // только буквы
                 .replace(/\s+/g, ' ')          // лишние пробелы
                 .trim();
         }
@@ -193,6 +192,7 @@ navigator.storage.getDirectory().then(({kind}) => {
                 }
             }
 
+            console.log(features)
             return features;
         }
 
