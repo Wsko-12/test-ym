@@ -297,7 +297,6 @@
                 Number(OS_PARTIALLY_STABLE.fonts.apple) +
                 Number(OS_PARTIALLY_STABLE.fonts.droid) +
                 HEAP_FONTS +
-                OS_PARTIALLY_STABLE.voice +
                 OS_RARELY_CHANGEABLE.language +
                 OS_RARELY_CHANGEABLE.darkTheme +
                 OS_RARELY_CHANGEABLE.timeZone;
@@ -311,7 +310,7 @@
                 return  new Uint8Array(hashBuffer).toHex().slice(0, 8);
             }
             digestMessage(sum).then((result) => {
-                fingerprint.innerText = result;
+                fingerprint.innerText = result + OS_PARTIALLY_STABLE.voice;
             })
 
             renderResult();
