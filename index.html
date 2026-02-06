@@ -208,7 +208,7 @@
         const onVoiceChanged = withResolve();
 
         speechSynthesis.getVoices();
-        speechSynthesis.addEventListener("voiceschanged", onVoiceChanged.resolve);
+        speechSynthesis.addEventListener && speechSynthesis.addEventListener("voiceschanged", onVoiceChanged.resolve);
         setTimeout(onVoiceChanged.resolve, 200);
 
         return new Promise((resolve) => {
