@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
-      if(false){
-       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-       m[i].l=1*new Date();
-       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-    
-       ym(102462605, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true
-       });
-      }
+        if(false){
+            (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                m[i].l=1*new Date();
+                for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+                k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+            ym(102462605, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true,
+                webvisor:true
+            });
+        }
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/102462605" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
@@ -27,21 +27,21 @@
 
 
     <script>
-      if(false){
-              const start = performance.now();
-      // Initialize the agent on page load.
-  const fpPromise = import('https://fpjscdn.net/v3/cheURAKfVuViSYMWYbi2')
-    .then(FingerprintJS => FingerprintJS.load());
+        if(false){
+            const start = performance.now();
+            // Initialize the agent on page load.
+            const fpPromise = import('https://fpjscdn.net/v3/cheURAKfVuViSYMWYbi2')
+                .then(FingerprintJS => FingerprintJS.load());
 
-  // Pass your own data to get()
-  fpPromise
-    .then(fp => fp.get())
-    .then(result => {
-      console.log(result);
-      console.log(performance.now() - start)
-    });
+            // Pass your own data to get()
+            fpPromise
+                .then(fp => fp.get())
+                .then(result => {
+                    console.log(result);
+                    console.log(performance.now() - start)
+                });
 
-      }
+        }
 
 
     </script>
@@ -49,153 +49,119 @@
     <!-- <script src="https://wsko-12.github.io/wwskgithubo.js"></script> -->
 </head>
 <body>
-  <h1>Test</h1>
+<h1>Test</h1>
 </body>
-    <script>
-const p =           document.createElement("p")
-          document.body.appendChild(p )
+<script>
+    const p =           document.createElement("p")
+    document.body.appendChild(p )
 
-navigator.storage.getDirectory().then(({kind}) => {
+    navigator.storage.getDirectory().then(({kind}) => {
         p.innerText = kind
-      }).catch((e) => {
-            p.innerText = e.message
-      })
-    </script>
+    }).catch((e) => {
+        p.innerText = e.message
+    })
+</script>
 
-    <script type="module">
-        const hasFont = (function () {
-            const canvas = document.createElement("canvas");
-            const ctx = canvas.getContext("2d");
+<script type="module">
+    const hasFont = (function () {
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
 
-            const testText = "mmmmmmmmmmlli";
+        const testText = "mmmmmmmmmmlli";
 
-            const baseFonts = ["monospace", "serif", "sans-serif"];
+        const baseFonts = ["monospace", "serif", "sans-serif"];
 
-            const baseSizes = baseFonts.map(base => {
-                ctx.font = `20px ${base}`;
-                return ctx.measureText(testText).width;
+        const baseSizes = baseFonts.map(base => {
+            ctx.font = `20px ${base}`;
+            return ctx.measureText(testText).width;
+        });
+
+        return function (font) {
+            return baseSizes.some((baseWidth, i) => {
+                ctx.font = `20px "${font}", ${baseFonts[i]}`;
+                const width = ctx.measureText(testText).width;
+                return width !== baseWidth;
             });
-
-            return function (font) {
-                return baseSizes.some((baseWidth, i) => {
-                    ctx.font = `20px "${font}", ${baseFonts[i]}`;
-                    const width = ctx.measureText(testText).width;
-                    return width !== baseWidth;
-                });
-            };
-        })();
-
-        const HARDWARE = {};
-        const HARDWARE_UNSTABLE = {}
-        const PERIPHERAL_HARDWARE = {};
-        const OS_PARTIALLY_STABLE = {};
-        const OS_RARELY_CHANGEABLE = {};
-        const UNSTABLE = {};
-
-
-
-        const getVoiceHashes = () => {
-            const keys = [];
-            const x = window.speechSynthesis.getVoices().reduce((acc, v) => {
-                const {name, lang} = v;
-
-                const lcName = name.toLowerCase();
-
-                const block = ["google"];
-
-                if(block.some((b) => lcName.includes(b))){
-                    return acc
-                }
-
-                const key = lang.split("-")[1];
-
-                if(!keys.includes(key)){
-                    keys.push(key)
-                }
-                acc[key] = acc[key] || [];
-
-                acc[key].push(name.toLowerCase())
-
-                return acc;
-            }, {})
-
-            console.log(x)
-
-            const features = extractFeatures(x);
-
-            const fingerprint = simHash(features).toString(16);
-
-            return  fingerprint
-        }
-
-
-
-        const renderResult = () => {
-            const code = document.createElement("code");
-
-            [
-                ["HARDWARE", HARDWARE],
-                ["HARDWARE_UNSTABLE", HARDWARE_UNSTABLE],
-                ["OS_PARTIALLY_STABLE", OS_PARTIALLY_STABLE],
-                ["OS_RARELY_CHANGEABLE", OS_RARELY_CHANGEABLE],
-                ["UNSTABLE", UNSTABLE],
-            ].forEach(([name, obj]) => {
-                const pre = document.createElement("pre");
-                code.appendChild(pre);
-                pre.innerText += `${name}:\n ${JSON.stringify(obj, null, 2)} \n\n`;
-            });
-
-            document.body.appendChild(code);
         };
+    })();
+
+    const HARDWARE = {};
+    const HARDWARE_UNSTABLE = {}
+    const PERIPHERAL_HARDWARE = {};
+    const OS_PARTIALLY_STABLE = {};
+    const OS_RARELY_CHANGEABLE = {};
+    const UNSTABLE = {};
+
+    const renderResult = () => {
+        const code = document.createElement("code");
+
+        [
+            ["HARDWARE", HARDWARE],
+            ["HARDWARE_UNSTABLE", HARDWARE_UNSTABLE],
+            ["OS_PARTIALLY_STABLE", OS_PARTIALLY_STABLE],
+            ["OS_RARELY_CHANGEABLE", OS_RARELY_CHANGEABLE],
+            ["UNSTABLE", UNSTABLE],
+        ].forEach(([name, obj]) => {
+            const pre = document.createElement("pre");
+            code.appendChild(pre);
+            pre.innerText += `${name}:\n ${JSON.stringify(obj, null, 2)} \n\n`;
+        });
+
+        document.body.appendChild(code);
+    };
 
 
-        const webGlFp = () => {
-            const wg2 = document.createElement("canvas").getContext("webgl2");
+    const webGlFp = () => {
+        const wg2 = document.createElement("canvas").getContext("webgl2");
 
-            HARDWARE.wg2 = {
-                MAX_VIEWPORT_DIMS: Array.from(wg2.getParameter(wg2.MAX_VIEWPORT_DIMS)).slice(0, 2).join("|"),
-                MAX_VERTEX_UNIFORM_COMPONENTS: wg2.getParameter(wg2.MAX_VERTEX_UNIFORM_COMPONENTS),
-                MAX_VERTEX_UNIFORM_VECTORS: wg2.getParameter(wg2.MAX_VERTEX_UNIFORM_VECTORS),
-            }
+        HARDWARE.wg2 = {
+            MAX_VIEWPORT_DIMS: Array.from(wg2.getParameter(wg2.MAX_VIEWPORT_DIMS)).slice(0, 2).join("|"),
+            MAX_VERTEX_UNIFORM_COMPONENTS: wg2.getParameter(wg2.MAX_VERTEX_UNIFORM_COMPONENTS),
+            MAX_VERTEX_UNIFORM_VECTORS: wg2.getParameter(wg2.MAX_VERTEX_UNIFORM_VECTORS),
+        }
 
-            HARDWARE_UNSTABLE.wg2 = {
-                MAX_SAMPLES: wg2.getParameter(wg2.MAX_SAMPLES),
+        HARDWARE_UNSTABLE.wg2 = {
+            MAX_SAMPLES: wg2.getParameter(wg2.MAX_SAMPLES),
+        }
+    }
+
+    const getVoicesHash = () => {
+        const withResolve = () => {
+            let resolve = null;
+            const promise = new Promise((r) => {
+                resolve = r;
+            })
+
+            return {
+                promise,
+                resolve,
             }
         }
-        window.speechSynthesis.getVoices();
 
+        const isOsVoice = (() => {
+            const browserVoices = ["google", "desktop"];
+            return (voice) => {
+                const normalized = voice.name.toLowerCase();
 
-        function normalizeVoice(str) {
-            return str
-                .toLowerCase()
-                .replace(/\([^)]*\)/g, '')     // убрать (russia), (us)
-                .replace(/\s+/g, ' ')          // лишние пробелы
-                .trim();
+                return !browserVoices.some((browserVoice) => normalized.includes(browserVoice))
+            }
+        })()
+
+        const normalizeVoiceName = (str) => str.replace(/\s+|\([^()]*\)/g, "").toLowerCase();
+
+        const log = (v) => {
+            console.log(v);
+
+            return v
         }
 
-        function shingles(str, size = 3) {
+        const shingles = (str, size = 3) => {
             const result = [];
             for (let i = 0; i <= str.length - size; i++) {
                 result.push(str.slice(i, i + size));
             }
             return result;
-        }
-
-
-        function extractFeatures(obj) {
-            const features = [];
-
-            for (const voices of Object.values(obj)) {
-                for (const voice of voices) {
-                    const norm = normalizeVoice(voice);
-                    features.push(...shingles(norm, 3));
-                }
-            }
-
-            console.log(features)
-            return features;
-        }
-
+        };
 
         function hash64(str) {
             let h = 0n;
@@ -206,7 +172,7 @@ navigator.storage.getDirectory().then(({kind}) => {
             return h;
         }
 
-        function simHash(features) {
+        function simHash64(features) {
             const bits = Array(64).fill(0);
 
             for (const f of features) {
@@ -223,70 +189,114 @@ navigator.storage.getDirectory().then(({kind}) => {
                 }
             }
 
-            return result;
+            return result.toString();
         }
 
+        const mapToHashes = (mapWithFeatures) =>
+            Object.fromEntries(Object.entries(mapWithFeatures).map(([lang, features]) =>  [lang, simHash64(features)]));
+
+        const mapToFeatures = (map) =>
+            Object.fromEntries(Object.entries(map).map(([lang, voices]) =>  [lang, voices.flatMap((voice) => shingles(voice))]));
+
+        const mapToStr = (mapWithHash) => {
+            const keys = Object.keys(mapWithHash).sort();
+            return keys.map((key) => `${key}${mapWithHash[key]}`).join("")
+        }
+
+        const toSimHash = (str) => simHash64(shingles(str))
+
+        const onVoiceChanged = withResolve();
+
+        speechSynthesis.getVoices();
+        speechSynthesis.addEventListener("voiceschanged", onVoiceChanged.resolve);
+        setTimeout(onVoiceChanged.resolve, 200);
+
+        return new Promise((resolve) => {
+            onVoiceChanged.promise.then(() => {
+                const base = speechSynthesis.getVoices()
+
+                const voices = base
+                    .filter(isOsVoice)
+                    .reduce((acc, voice) => {
+                        const key = voice.lang.split("-")[1];
+                        acc[key] = acc[key] || [];
+                        acc[key].push(normalizeVoiceName(voice.name));
+
+                        return acc;
+                    }, {})
+
+                console.log(voices)
+
+                const result = [mapToFeatures,log, mapToHashes, log, mapToStr, log,toSimHash, log].reduce((acc, fn) => fn(acc), voices)
+
+                resolve(result);
+            })
+        })
+    };
+
+    getVoicesHash()
+
+    const main = () => {
+        const audioCtx = new window.AudioContext();
+        HARDWARE.hardwareConcurrency = navigator.hardwareConcurrency;
+        HARDWARE.sampleRate = audioCtx.sampleRate;
+        HARDWARE.maxChannelCount = audioCtx.destination.maxChannelCount;
+        HARDWARE_UNSTABLE.colorDepth = screen.colorDepth;
+
+        const HEAP_FONTS = [
+            "Segoe UI",
+            "Calibri",
+            "San Francisco",
+            "Helvetica Neue",
+            "Ubuntu",
+            "Cantarell",
+            "Yu Gothic",
+            "Hiragino Sans",
+            "PingFang SC",
+            "Malgun Gothic",
+            "Noto Sans CJK",
+            "Cambria",
+            "Consolas",
+            "Myriad Pro",
+            "Avenir",
+            "JetBrains Mono",
+            "Fira Code",
+            "DejaVu Sans",
+            "Liberation Serif",
+            "Roboto",
+            "Symbol",
+            "Lora",
+            "MingLiU_HKSCS-ExtB"
+        ].map((font) => Number(hasFont(font))).join("")
+
+        OS_PARTIALLY_STABLE.fonts = {
+            microsoft: hasFont("Microsoft YaHei"),
+            apple: hasFont("AppleGothic"),
+            droid: hasFont("Droid Sans Mono"),
+            heapFonts: `${Number.parseInt(HEAP_FONTS, 2)}|${HEAP_FONTS}`,
+        };
+
+        OS_RARELY_CHANGEABLE.language = navigator.language;
+        OS_RARELY_CHANGEABLE.darkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        OS_RARELY_CHANGEABLE.timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
 
-        window.setTimeout(() => {
-            const audioCtx = new window.AudioContext();
-            HARDWARE.hardwareConcurrency = navigator.hardwareConcurrency;
-            HARDWARE.sampleRate = audioCtx.sampleRate;
-            HARDWARE.maxChannelCount = audioCtx.destination.maxChannelCount;
-            HARDWARE_UNSTABLE.colorDepth = screen.colorDepth;
+        webGlFp()
+        const SECOND = {};
+        SECOND.colorGamut = ["srgb", "p3", "rec2020"].map(((e) => {
+                return !!window.matchMedia(`( color-gamut: ${e})`).matches && e;
+            }
+        )).filter(Boolean);
+        SECOND.defaultVoice = speechSynthesis.getVoices()[0];
+        SECOND.emoji = "TODO";
 
-            const HEAP_FONTS = [
-                "Segoe UI",
-                "Calibri",
-                "San Francisco",
-                "Helvetica Neue",
-                "Ubuntu",
-                "Cantarell",
-                "Yu Gothic",
-                "Hiragino Sans",
-                "PingFang SC",
-                "Malgun Gothic",
-                "Noto Sans CJK",
-                "Cambria",
-                "Consolas",
-                "Myriad Pro",
-                "Avenir",
-                "JetBrains Mono",
-                "Fira Code",
-                "DejaVu Sans",
-                "Liberation Serif",
-                "Roboto",
-                "Symbol",
-                "Lora",
-                "MingLiU_HKSCS-ExtB"
-            ].map((font) => Number(hasFont(font))).join("")
-
-            OS_PARTIALLY_STABLE.fonts = {
-                microsoft: hasFont("Microsoft YaHei"),
-                apple: hasFont("AppleGothic"),
-                droid: hasFont("Droid Sans Mono"),
-                heapFonts: `${Number.parseInt(HEAP_FONTS, 2)}|${HEAP_FONTS}`,
-            };
-
-            OS_RARELY_CHANGEABLE.language = navigator.language;
-            OS_RARELY_CHANGEABLE.darkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
-            OS_RARELY_CHANGEABLE.timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
-
-            webGlFp()
-            const SECOND = {};
-            SECOND.colorGamut = ["srgb", "p3", "rec2020"].map(((e) => {
-                    return !!window.matchMedia(`( color-gamut: ${e})`).matches && e;
-                }
-            )).filter(Boolean);
-            SECOND.defaultVoice = speechSynthesis.getVoices()[0];
-            SECOND.emoji = "TODO";
-
-            UNSTABLE.voice = getVoiceHashes();
+        getVoicesHash().then((result) => {
+            OS_PARTIALLY_STABLE.voice = result;
             renderResult();
+        });
+    };
 
-
-        }, 100);
+    main()
 
 
 </script>
