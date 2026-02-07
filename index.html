@@ -78,7 +78,7 @@
         return function (font) {
             ctx.font = `20px ${font}`;
             const width = ctx.measureText(testText).width;
-            return width !== baseWidth;
+            return [width !== baseWidth, width, baseWidth].toString();
         };
     })();
 
