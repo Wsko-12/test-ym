@@ -149,6 +149,46 @@
         }
     }
 
+    const shingles = (str, size = 3) => {
+        const result = [];
+        for (let i = 0; i <= str.length - size; i++) {
+            result.push(str.slice(i, i + size));
+        }
+        return result;
+    };
+
+    function hash64(str) {
+        let h = 0n;
+        for (let i = 0; i < str.length; i++) {
+            h = (h << 5n) - h + BigInt(str.charCodeAt(i));
+            h &= (1n << 64n) - 1n;
+        }
+        return h;
+    }
+
+    function simHash64(features) {
+        const bits = Array(64).fill(0);
+
+        for (const f of features) {
+            const h = hash64(f);
+            for (let i = 0; i < 64; i++) {
+                bits[i] += (h >> BigInt(i)) & 1n ? 1 : -1;
+            }
+        }
+
+        let result = 0n;
+        for (let i = 0; i < 64; i++) {
+            if (bits[i] > 0) {
+                result |= 1n << BigInt(i);
+            }
+        }
+
+        return result.toString();
+    }
+
+    const toSimHash = (str) => simHash64(shingles(str))
+
+
     const getVoicesHash = () => {
         const withResolve = () => {
             let resolve = null;
@@ -179,43 +219,6 @@
             return v
         }
 
-        const shingles = (str, size = 3) => {
-            const result = [];
-            for (let i = 0; i <= str.length - size; i++) {
-                result.push(str.slice(i, i + size));
-            }
-            return result;
-        };
-
-        function hash64(str) {
-            let h = 0n;
-            for (let i = 0; i < str.length; i++) {
-                h = (h << 5n) - h + BigInt(str.charCodeAt(i));
-                h &= (1n << 64n) - 1n;
-            }
-            return h;
-        }
-
-        function simHash64(features) {
-            const bits = Array(64).fill(0);
-
-            for (const f of features) {
-                const h = hash64(f);
-                for (let i = 0; i < 64; i++) {
-                    bits[i] += (h >> BigInt(i)) & 1n ? 1 : -1;
-                }
-            }
-
-            let result = 0n;
-            for (let i = 0; i < 64; i++) {
-                if (bits[i] > 0) {
-                    result |= 1n << BigInt(i);
-                }
-            }
-
-            return result.toString();
-        }
-
         const mapToHashes = (mapWithFeatures) =>
             Object.fromEntries(Object.entries(mapWithFeatures).map(([lang, features]) =>  [lang, simHash64(features)]));
 
@@ -227,7 +230,6 @@
             return keys.map((key) => `${key}${mapWithHash[key]}`).join("")
         }
 
-        const toSimHash = (str) => simHash64(shingles(str))
 
         const onVoiceChanged = withResolve();
 
@@ -310,19 +312,20 @@
         getVoicesHash().then((result) => {
             OS_PARTIALLY_STABLE.voice = result;
 
-            const sum = "" +
-                HARDWARE.hardwareConcurrency +
+            const STABLE = "" + HARDWARE.hardwareConcurrency +
                 HARDWARE.sampleRate +
                 HARDWARE.maxChannelCount +
                 HARDWARE.wg2.MAX_VIEWPORT_DIMS +
                 HARDWARE.wg2.MAX_VERTEX_UNIFORM_COMPONENTS +
                 HARDWARE.wg2.MAX_VERTEX_UNIFORM_VECTORS +
-                HARDWARE.wg2.MAX_TEXTURE_IMAGE_UNITS +
-                Number(OS_PARTIALLY_STABLE.fonts.microsoft) +
+                HARDWARE.wg2.MAX_TEXTURE_IMAGE_UNITS;
+
+            const FLOAT = "" + Number(OS_PARTIALLY_STABLE.fonts.microsoft) +
                 Number(OS_PARTIALLY_STABLE.fonts.apple) +
                 Number(OS_PARTIALLY_STABLE.fonts.droid) +
-                HEAP_FONTS +
-                OS_RARELY_CHANGEABLE.language +
+                HEAP_FONTS;
+
+            const CHANGEABLE = "" + OS_RARELY_CHANGEABLE.language +
                 OS_RARELY_CHANGEABLE.darkTheme +
                 OS_RARELY_CHANGEABLE.timeZone;
 
@@ -339,10 +342,18 @@
                     .join("");
             }
 
+            (async () => {
+                const all = await Promise.all([
+                    sha256(STABLE),
+                    toSimHash(FLOAT),
+                    toSimHash(CHANGEABLE),
+                ]);
 
-            sha256(sum).then((result) => {
-                fingerprint.innerText = result.slice(0, 4) + OS_PARTIALLY_STABLE.voice;
-            })
+                const stable =all[0].slice(0, 4);
+                const float = all[1];
+                const changeable = all[2];
+                fingerprint.innerText = stable + float + OS_PARTIALLY_STABLE.voice + changeable;
+            })()
 
             renderResult();
         });
