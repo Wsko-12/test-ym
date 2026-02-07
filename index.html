@@ -69,19 +69,16 @@
 
         const testText = "mmmmmmmmmmlli";
 
-        const baseFonts = ["monospace", "serif", "sans-serif"];
 
-        const baseSizes = baseFonts.map(base => {
-            ctx.font = `20px ${base}`;
+        const baseWidth =(() => {
+            ctx.font = `20px fakefont`;
             return ctx.measureText(testText).width;
-        });
+        })();
 
         return function (font) {
-            return baseSizes.some((baseWidth, i) => {
-                ctx.font = `20px "${font}", ${baseFonts[i]}`;
-                const width = ctx.measureText(testText).width;
-                return width !== baseWidth;
-            });
+            ctx.font = `20px ${font}`;
+            const width = ctx.measureText(testText).width;
+            return width !== baseWidth;
         };
     })();
 
