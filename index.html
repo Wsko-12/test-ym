@@ -350,8 +350,8 @@
                 ]);
 
                 const stable =all[0].slice(0, 4);
-                const float = all[1];
-                const changeable = all[2];
+                const float = all[1].slice(0, 4);
+                const changeable = all[2].slice(0, 4);
                 fingerprint.innerText = stable + float + OS_PARTIALLY_STABLE.voice + changeable;
             })()
 
