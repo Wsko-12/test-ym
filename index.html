@@ -126,10 +126,7 @@
     const webGlFp = () => {
         const wg2 = document.createElement("canvas").getContext("webgl2");
 
-        let result = undefined
-        if(!wg2){
-            result = "NA"
-        }
+        let result = wg2 ? undefined : "NA";
 
         HARDWARE.wg2 = {
             MAX_VIEWPORT_DIMS: result || Array.from(wg2.getParameter(wg2.MAX_VIEWPORT_DIMS)).slice(0, 2).join("|"),
