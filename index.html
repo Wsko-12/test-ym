@@ -130,7 +130,7 @@
                     STENCIL_WRITEMASK: (wg.STENCIL_WRITEMASK && wg.getParameter(wg.STENCIL_WRITEMASK)) || 0,
                 };
 
-                HARDWARE.antialias = wg.getContextAttributes().antialias ?? "NA";
+                HARDWARE.wg.antialias = wg.getContextAttributes().antialias ?? "NA";
 
             }
 
@@ -315,7 +315,7 @@
                 HARDWARE.wg2.MAX_VERTEX_UNIFORM_COMPONENTS +
                 HARDWARE.wg2.MAX_VERTEX_UNIFORM_VECTORS +
                 HARDWARE.wg2.MAX_TEXTURE_IMAGE_UNITS +
-                HARDWARE.antialias;
+                HARDWARE.wg.antialias;
 
             const FLOAT = "" + HEAP_FONTS;
 
