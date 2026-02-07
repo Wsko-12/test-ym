@@ -126,10 +126,14 @@
             const wg = c.getContext("webgl") || c.getContext("experimental-webgl");
 
             if(wg){
-                HEAP.STENCIL_WRITEMASK = (wg.STENCIL_WRITEMASK && wg.getParameter(wg.STENCIL_WRITEMASK)) || 0
-            }
-        }
+                HEAP.wg = {
+                    STENCIL_WRITEMASK: (wg.STENCIL_WRITEMASK && wg.getParameter(wg.STENCIL_WRITEMASK)) || 0,
+                    antialias: wg.getContextAttributes().antialias ?? "NA",
+                };
 
+            }
+
+        }
 
         let result = wg2 ? undefined : "NA";
 
