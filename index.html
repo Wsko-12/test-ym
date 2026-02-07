@@ -71,12 +71,12 @@
 
 
         const baseWidth =(() => {
-            ctx.font = `20px fakefont`;
+            ctx.font = `80px fakefont`;
             return ctx.measureText(testText).width;
         })();
 
         return function (font) {
-            ctx.font = `20px ${font}`;
+            ctx.font = `80px ${font}`;
             const width = ctx.measureText(testText).width;
             return [width !== baseWidth, width, baseWidth].toString();
         };
