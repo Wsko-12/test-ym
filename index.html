@@ -341,7 +341,7 @@
                 const all = await Promise.all([
                     sha256(STABLE),
                     toSimHash(FLOAT),
-                    toSimHash(CHANGEABLE),
+                    sha256(CHANGEABLE),
                 ]);
 
                 const stable =all[0].slice(0, 4);
