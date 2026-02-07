@@ -130,7 +130,9 @@
                     STENCIL_WRITEMASK: (wg.STENCIL_WRITEMASK && wg.getParameter(wg.STENCIL_WRITEMASK)) || 0,
                 };
 
-                HARDWARE.wg.antialias = wg.getContextAttributes().antialias ?? "NA";
+                HARDWARE.wg = {
+                    antialias: wg.getContextAttributes().antialias ?? "NA"
+                };
 
             }
 
