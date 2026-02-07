@@ -266,6 +266,8 @@
         HARDWARE_UNSTABLE.colorDepth = screen.colorDepth;
 
         const HEAP_FONTS = [
+            "'Microsoft YaHei'",
+            "AppleGothic",
             "Segoe UI",
             "Calibri",
             "'San Francisco'",
@@ -290,11 +292,7 @@
             "MingLiU_HKSCS-ExtB"
         ].map((font) => Number(hasFont(font))).join("")
 
-        OS_PARTIALLY_STABLE.fonts = {
-            microsoft: hasFont("Microsoft YaHei"),
-            apple: hasFont("AppleGothic"),
-        };
-
+        OS_PARTIALLY_STABLE.fonts = HEAP_FONTS;
         OS_RARELY_CHANGEABLE.language = navigator.language;
         OS_RARELY_CHANGEABLE.darkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
         OS_RARELY_CHANGEABLE.timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -313,9 +311,7 @@
                 HARDWARE.wg2.MAX_VERTEX_UNIFORM_VECTORS +
                 HARDWARE.wg2.MAX_TEXTURE_IMAGE_UNITS;
 
-            const FLOAT = "" + Number(OS_PARTIALLY_STABLE.fonts.microsoft) +
-                Number(OS_PARTIALLY_STABLE.fonts.apple) +
-                HEAP_FONTS;
+            const FLOAT = "" + HEAP_FONTS;
 
             const CHANGEABLE = "" + OS_RARELY_CHANGEABLE.language +
                 OS_RARELY_CHANGEABLE.darkTheme +
