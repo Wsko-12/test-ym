@@ -293,8 +293,6 @@
         OS_PARTIALLY_STABLE.fonts = {
             microsoft: hasFont("Microsoft YaHei"),
             apple: hasFont("AppleGothic"),
-            droid: hasFont("Baskerville") && !hasFont("Zapfino"), // IOS anti
-            heapFonts: `${Number.parseInt(HEAP_FONTS, 2)}|${HEAP_FONTS}`,
         };
 
         OS_RARELY_CHANGEABLE.language = navigator.language;
@@ -317,7 +315,6 @@
 
             const FLOAT = "" + Number(OS_PARTIALLY_STABLE.fonts.microsoft) +
                 Number(OS_PARTIALLY_STABLE.fonts.apple) +
-                Number(OS_PARTIALLY_STABLE.fonts.droid) +
                 HEAP_FONTS;
 
             const CHANGEABLE = "" + OS_RARELY_CHANGEABLE.language +
@@ -348,6 +345,7 @@
                 const float = all[1].slice(0, 4);
                 const changeable = all[2].slice(0, 4);
                 fingerprint.innerText = stable + float + OS_PARTIALLY_STABLE.voice + changeable;
+
             })()
 
             renderResult();
