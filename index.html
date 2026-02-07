@@ -433,6 +433,8 @@
 
             if(wg){
                 HEAP.wgParams = Object.fromEntries(x.map((param) => [param,(wg[param] && wg.getParameter(wg[param])) || 0]))
+
+                HEAP.STENCIL_WRITEMASK = (wg.STENCIL_WRITEMASK && wg.getParameter(wg.STENCIL_WRITEMASK)) || 0
                 console.log(HEAP.wgParams)
             }
         }
@@ -444,6 +446,7 @@
             MAX_VIEWPORT_DIMS: result || Array.from(wg2.getParameter(wg2.MAX_VIEWPORT_DIMS)).slice(0, 2).join("|"),
             MAX_VERTEX_UNIFORM_COMPONENTS: result || wg2.getParameter(wg2.MAX_VERTEX_UNIFORM_COMPONENTS),
             MAX_VERTEX_UNIFORM_VECTORS: result || wg2.getParameter(wg2.MAX_VERTEX_UNIFORM_VECTORS),
+            MAX_TEXTURE_IMAGE_UNITS: result || wg2.getParameter(wg2.MAX_TEXTURE_IMAGE_UNITS),
         }
 
         HARDWARE_UNSTABLE.wg2 = {
