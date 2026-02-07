@@ -432,7 +432,7 @@
             const wg = c.getContext("webgl") || c.getContext("experimental-webgl");
 
             if(wg){
-                HEAP.wgParams = x.map((param) => wg[param] && wg.getParameter(wg[param]) || 0).join("|");
+                HEAP.wgParams = Object.fromEntries(x.map((param) => [param,(wg[param] && wg.getParameter(wg[param])) || 0]))
                 console.log(HEAP.wgParams)
             }
         }
