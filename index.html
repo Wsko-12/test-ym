@@ -295,7 +295,7 @@
         OS_PARTIALLY_STABLE.fonts = {
             microsoft: hasFont("Microsoft YaHei"),
             apple: hasFont("AppleGothic"),
-            droid: hasFont("Droid Sans Mono"),
+            droid: hasFont("Droid Sans Mono") || hasFont("Noto Sans Gothic"),
             heapFonts: `${Number.parseInt(HEAP_FONTS, 2)}|${HEAP_FONTS}`,
         };
 
